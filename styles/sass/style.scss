@@ -1,0 +1,23 @@
+/* Naming Convention Used: BEM (https://css-tricks.com/bem-101/) w/ camelCase and Media Query Bubbling (https://www.creativebloq.com/how-to/how-to-structure-media-queries-in-sass) */ 
+
+/* File & Folder Convention Used: 7-1 Pattern (https://sass-guidelin.es/#the-7-1-pattern) w/ camelCase */ 
+
+// abtracts
+@import 'abstracts/variables';
+
+// base
+@import 'base/setup';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/images';
+
+// layout
+@import 'layout/body';
+@import 'layout/JQ';
+@import 'layout/textBox';
+
+// components
+@import 'components/accessibility';
+@import 'components/buttons';
+
+// pages

@@ -1,0 +1,77 @@
+.JQ {
+    width: 175px;
+    height: 130px;
+    border-radius: 50% 50% 75px 75px;
+    background-color: $JQ;
+    margin: 50px auto 75px auto;
+    position: relative;
+    animation: bounce 3s ease infinite;
+    &__eye {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #272727;
+        position: absolute;
+    }
+    &__eyeShine {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+    }
+    &__cheek {
+        width: 20px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: pink;
+        position: absolute;
+    } 
+    &__mouth {
+        width: 20px;
+        height: 10px;
+        border-radius: 0 0 50% 50%;
+        background-color: #FA8072;
+        position: absolute;
+        top: 70px;
+        left: 75px;
+    }
+}
+
+.leftEye {
+    top: 45px;
+    left: 45px;
+}
+
+.rightEye {
+    top: 45px;
+    right: 45px;
+}
+
+.leftEyeShine {
+    top: 3px;
+    left: 2px;
+}
+
+.rightEyeShine {
+    top: 3px;
+    left: 2px;
+}
+
+.leftCheek {
+    top: 70px;
+    left: 40px;
+}
+
+.rightCheek {
+    top: 70px;
+    right: 40px;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translate(0, 20px);
+        border-radius: 50% 50% 45px 45px;
+        box-shadow: 0 6px 2px -2px #272727;
+    }
+}
