@@ -282,6 +282,10 @@ p {
   line-height: 3.6rem;
 }
 
+a {
+  color: cornsilk;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -403,6 +407,10 @@ body {
   }
 }
 
+.textBoxExtraMargin {
+  margin-top: 50px;
+}
+
 .sr-only {
   position: absolute;
   left: -10000px;
@@ -435,4 +443,21 @@ button:active {
           box-shadow: 5px 5px 0 0 #463F3A;
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
+}
+
+.initiallyHidden {
+  display: none;
+}
+
+input {
+  border: none;
+  margin-top: 25px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  font-size: 2.0rem;
+}
+
+.pinkHeart {
+  color: #DA9F93;
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>jQuery with JQ!</h1>
-    <div class="JQ">
+    <div id="JQ" class="JQ">
         <div class="JQ__eye leftEye">
             <div class="JQ__eyeShine leftEyeShine"></div>
         </div>
@@ -21,10 +21,93 @@
         <div class="JQ__cheek rightCheek"></div>
         <div class="JQ__mouth"></div>
     </div>
-    <section class="textBox">
-        <p>Hi, I'm a blob named JQ!</p> 
-        <p>Let's go on an adventure and learn more about jQuery together!</p>
-        <button>Let's Go!</button>
-    </section>
+    <div class="textBox" id="textBox">
+        <!-- INTRO SECTION BEGINS -->
+        <section class="intro">
+            <section id="intro">
+                <p>Hi, I'm a blob named JQ!</p> 
+                <p>Let's go on an adventure and learn more about jQuery together!</p>
+                <button id="goToDemoIntro">Let's Go!</button>
+            </section>
+        </section>
+        <!-- INTRO SECTION ENDS -->
+
+        <!-- DEMO SECTION BEGINS -->
+        <!-- jQuery Effect Methods used: .hide(), .show() -->
+        <section class="demo">
+            <section id="demoIntro" class="initiallyHidden">
+                <p>We're going to be using some jQuery Effect Methods to help us on our journey.</p>
+                <button id="goToIntro">< Back</button>
+                <button id="goToDemoHide">Next ></button>
+            </section>
+            <section id="demoHide" class="initiallyHidden">
+                <p>Let's try one right now!</p> 
+                <p>Click the input field, and type "$("#JQ").hide();" (without the quotes).</p>
+                <p>This is case-sensitive, and spacing matters!</p>
+                <input type="text" id="demoHideInput">
+            </section>
+            <section id="demoHideSuccess" class="initiallyHidden">
+                <p>You did it! But...where did I go?</p>
+                <p>You successfully hid me using hide()!</p>
+                <button id="goToDemoShow">Next ></button>
+            </section>
+            <section id="demoShow" class="initiallyHidden">
+                <p>Now you can bring me back using show().</p>
+                <p>Click the input field, and type "$("#JQ").show();" (without the quotes).</p>
+                <p>This is case-sensitive, and spacing matters!</p>
+                <input type="text" id="demoShowInput">
+            </section>
+            <section id="demoShowSuccess" class="initiallyHidden">
+                <p>Way to go!</p>
+                <p>I can't wait to continue this journey with you. My creator Jacqui (<a href="https://twitter.com/jdorocho">@jdorocho</a>) will be working on this project over the next week and a half, and a Version 1 will be available on Valentine's Day (Feb 14th, 2020 <span class="pinkHeart">&#9829;</span>). :)</p>
+                <p>See you again soon!</p>
+            </section>
+        </section>
+        <!-- DEMO SECTION ENDS -->
+
+        <!-- SCROLL SECTION BEGINS -->
+        <!-- jQuery Effect Methods used: .slideDown(), .slideUp() -->
+        <section class="scroll">
+
+        </section>
+        <!-- SCROLL SECTION ENDS -->
+
+        <!-- COOKIES SECTION BEGINS -->
+        <!-- jQuery Effect Methods used: .show(), .hide() -->
+        <section class="cookies">
+
+        </section>
+        <!-- COOKIES SECTION ENDS -->
+
+        <!-- MOUSE SECTION BEGINS -->
+        <!-- jQuery Effect Methods used: .delay() -->
+        <section class="mouse">
+
+        </section>
+        <!-- MOUSE SECTION ENDS -->
+
+        <!-- INVISIBLE WALL SECTION BEGINS -->
+        <!-- jQuery Effect Methods used: .fadeIn(), .slideUp() -->
+        <section class="invisibleWall">
+
+        </section>
+        <!-- INVISIBLE WALL SECTION ENDS -->
+
+        <!-- EVIL ROBOT SECTION BEGINS -->
+        <!-- jQuery Effect Methods used: .fadeOut() -->
+        <section class="evilRobot">
+
+        </section>
+        <!-- EVIL ROBOT SECTION ENDS -->
+
+        <!-- TREASURE SECTION BEGINS -->
+        <!-- jQuery Effect Methods used: .fadeIn() -->
+        <section class="treasure">
+
+        </section>
+        <!-- TREASURE SECTION ENDS -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts/scripts.js"></script> 
 </body>
 </html>
