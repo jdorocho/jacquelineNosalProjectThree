@@ -397,6 +397,12 @@ body {
   padding: 50px 50px 55px 50px;
 }
 
+@media (max-width: 695px) {
+  .textBox {
+    margin-bottom: 50px;
+  }
+}
+
 .sr-only {
   position: absolute;
   left: -10000px;
