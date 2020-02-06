@@ -1,0 +1,55 @@
+INTRO 
+- User lands on page 
+- Cute animated blob introduces itself in a text box, and explains that they will learn jQuery together 
+- Button to go to next page
+
+DEMO
+- Text displayed for User to type $("#JQ").hide(); in an input field 
+- User's input is captured 
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, success text displayed, blob disappears, and text displayed to guide User to type $("#JQ").show(); 
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, success text displays and blob reappears, as well as button to go to next page. 
+
+SCROLL 
+- Text displayed for User to type $("#scroll").show(); in an input field 
+- User's input is captured 
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, success text displayed, scroll appears, as well as text displayed to guide User to type $("#scroll").hide(); to hide the scroll
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, success text displays as well as button to go to next page. Scroll is hidden again
+
+COOKIES
+- Text displayed for User to type $("#cookies").show(); in an input field 
+- User's input is captured 
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, success text and cookies are displayed, as well as text displayed to guide User to type $("#cookies").hide(); to hide the cookies
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, success text displays as well as button to go to next page. Cookies are hidden
+
+MOUSE
+- Text displayed for User to type $("#mouse").hide(); in an input field 
+- User's input is captured 
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, success text displayed, mouse disappears, as well as button to go to next page
+
+EVIL ROBOT
+- Text displayed for User to type $("#evilRobot").hide(); in an input field 
+- User's input is captured 
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, success text displayed, robot  disappears, as well as button to go to next page
+
+TREASURE
+- Text displayed for User to type $("#treasure").show(); in an input field 
+- User's input is captured 
+- Conditional to test if User inputted the correct text 
+- If not, User prompted to try again
+- If successful, treasure appears as well as success text 
