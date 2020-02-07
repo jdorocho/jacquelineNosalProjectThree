@@ -13,16 +13,6 @@ DEMO
 - If not, User prompted to try again
 - If successful, success text displays and blob reappears, as well as button to go to next page. 
 
-SCROLL 
-- Text displayed for User to type $("#scroll").show(); in an input field 
-- User's input is captured 
-- Conditional to test if User inputted the correct text 
-- If not, User prompted to try again
-- If successful, success text displayed, scroll appears, as well as text displayed to guide User to type $("#scroll").hide(); to hide the scroll
-- Conditional to test if User inputted the correct text 
-- If not, User prompted to try again
-- If successful, success text displays as well as button to go to next page. Scroll is hidden again
-
 COOKIES
 - Text displayed for User to type $("#cookies").show(); in an input field 
 - User's input is captured 
