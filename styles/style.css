@@ -283,6 +283,10 @@ p {
 }
 
 a {
+  color: #DA9F93;
+}
+
+.standOut {
   color: cornsilk;
 }
 

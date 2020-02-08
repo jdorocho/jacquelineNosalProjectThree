@@ -19,5 +19,9 @@ p {
 }
 
 a {
-    color: $clickText;
+    color: $accent;
+}
+
+.standOut {
+    color: $attentionText;
 }
