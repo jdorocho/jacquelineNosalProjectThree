@@ -27,7 +27,7 @@
         background-color: pink;
         position: absolute;
     } 
-    &__mouth {
+    &__defaultMouth {
         width: 20px;
         height: 10px;
         border-radius: 0 0 50% 50%;
@@ -66,6 +66,38 @@
 .rightCheek {
     top: 70px;
     right: 40px;
+}
+
+.JQ__happyEyes {
+    position: relative;
+    color: #272727;
+}
+
+.JQ__happyLeftEye, 
+.JQ__happyRightEye {
+    transform: rotate(90deg);
+    font-size: 3.6rem;
+    position: absolute;
+}
+
+.JQ__happyLeftEye {
+    top: 30px;
+    left: 50px;
+}
+
+.JQ__happyRightEye {
+    top: 30px;
+    left: 110px;
+}
+
+.JQ__wonderUhOhMouth {
+    width: 20px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #FA8072;
+    position: absolute;
+    top: 70px;
+    left: 75px;
 }
 
 @keyframes bounce {

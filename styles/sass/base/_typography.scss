@@ -22,6 +22,15 @@ a {
     color: $accent;
 }
 
-.standOut {
+.standOut, 
+.validateMessage {
     color: $attentionText;
+}
+
+.validateMessage {
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 45px;
+    margin-top: 5px;
 }

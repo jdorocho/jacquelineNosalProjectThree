@@ -11,159 +11,186 @@
 <body>
     <h1>jQuery with JQ!</h1>
     <div id="JQ" class="JQ">
-        <div class="JQ__eye leftEye">
-            <div class="JQ__eyeShine leftEyeShine"></div>
-        </div>
-        <div class="JQ__eye rightEye">
-            <div class="JQ__eyeShine rightEyeShine"></div>
+        <div id="JQ__eyes">
+            <div id="JQ__defaultEyes">
+                <div class="JQ__eye leftEye">
+                    <div class="JQ__eyeShine leftEyeShine"></div>
+                </div>
+                <div class="JQ__eye rightEye">
+                    <div class="JQ__eyeShine rightEyeShine"></div>
+                </div>
+            </div>
         </div>
         <div class="JQ__cheek leftCheek"></div>
         <div class="JQ__cheek rightCheek"></div>
-        <div class="JQ__mouth"></div>
+        <div id="JQ__mouth">
+            <div id="JQ__defaultMouth" class="JQ__defaultMouth"></div>
+        </div>
     </div>
+    <div id="adventureItems" class="adventureItems"></div>
     <div class="textBox" id="textBox">
         <!-- INTRO SECTION BEGINS -->
-        <section class="intro">
+        <section id="mainContent">
             <section id="intro">
                 <p>Hi, I'm a blob named JQ!</p> 
                 <p>Let's go on an adventure and learn more about jQuery together!</p>
-                <button id="goToDemoIntro">Let's Go!</button>
+                <button id="goToDemoIntro">Let's Go!</button id="go">
             </section>
         </section>
         <!-- INTRO SECTION ENDS -->
 
         <!-- DEMO SECTION BEGINS -->
         <!-- jQuery Effect Methods used: .hide(), .show() -->
-        <section class="demo">
-            <section id="demoIntro" class="initiallyHidden">
+        <!-- <section class="demo">
+            <section id="demoIntro">
                 <p>We're going to be using some jQuery Effect Methods to help us on our journey.</p>
                 <button id="goToIntro">< Back</button>
                 <button id="goToDemoHide">Next ></button>
             </section>
-            <section id="demoHide" class="initiallyHidden">
+            <section id="demoHide">
                 <p>Let's try one right now!</p> 
                 <p>Type <span class="standOut">$("#JQ").hide();</span>, and press enter to submit.</p>
                 <p>This is case-sensitive, and spacing matters!</p>
-                <input type="text" id="demoHideInput">
+                <form id="demoHideForm">
+                    <input type="text" id="demoHideInput">
+                </form>
+                <p id="validateMessage" class="validateMessage"></p>
             </section>
-            <section id="demoHideSuccess" class="initiallyHidden">
+            <section id="demoHideSuccess">
                 <p>You did it! But...where did I go?</p>
                 <p>You successfully hid me using hide()!</p>
                 <button id="goToDemoHide">< Back</button>
                 <button id="goToDemoShow">Next ></button>
             </section>
-            <section id="demoShow" class="initiallyHidden">
+            <section id="demoShow">
                 <p>Now you can bring me back using show().</p>
                 <p>Type <span class="standOut">$("#JQ").show();</span>, and press enter to submit.</p>
                 <p>Remember: This is case-sensitive, and spacing matters!</p>
-                <input type="text" id="demoShowInput">
-            </section>'
-            <section id="demoShowSuccess" class="initiallyHidden">
+                <form id="demoShowForm">
+                    <input type="text" id="demoShowInput">
+                </form>
+                <p id="validateMessage" class="validateMessage"></p>
+            </section>
+            <section id="demoShowSuccess">
                 <p>Way to go!</p>
                 <button id="goToDemoShow">< Back</button>
-                <button id="goToCookiesShow">Next ></button>
+                <button id="goToCookiesIntro">Next ></button>
             </section>
-        </section>
+        </section> -->
         <!-- DEMO SECTION ENDS -->
 
         <!-- COOKIES SECTION BEGINS -->
         <!-- jQuery Effect Method used: .show()-->
-        <section class="cookies">
-            <section id="cookiesIntro" class="initiallyHidden">
+        <!-- <section class="cookies">
+            <section id="cookiesIntro">
                 <p>What's the best way to start an adventure?</p>
                 <button id="goToDemoShowSuccess">< Back</button>
                 <button id="goToCookiesShow">Next ></button>
             </section>
-            <section id="cookiesShow" class="initiallyHidden">
+            <section id="cookiesShow">
                 <p>With snacks!</p>
                 <p>Type <span class="standOut">$("#cookies").show();</span>, and press enter to show some cookies!</p>
-                <input type="text" id="cookiesShowInput">
+                <form id="cookiesShowForm">
+                    <input type="text" id="cookiesShowInput">
+                </form>
+                <p id="validateMessage" class="validateMessage"></p>
             </section>
-            <section id="cookiesShowSuccess" class="initiallyHidden">
+            <section id="cookiesShowSuccess">
                 <p>Yum! Delicious!</p>
                 <button id="goToCookiesShow">< Back</button>
                 <button id="goToMouseIntro">Next ></button>
             </section>
-        </section>
+        </section> -->
         <!-- COOKIES SECTION ENDS -->
 
         <!-- MOUSE SECTION BEGINS -->
-        <!-- jQuery Effect Method used: .delay() -->
-        <section class="mouse">
-            <section id="mouseIntro" class="initiallyHidden">
+        <!-- jQuery Effect Method used: .animate(), fadeOut() -->
+        <!-- <section class="mouse">
+            <section id="mouseIntro">
                 <p>But...uh oh! The crumbs must have attracted a mouse.</p>
                 <button id="goToCookiesShowSuccess">< Back</button>
-                <button id="goToMouseDelay">Next ></button>
+                <button id="goToMouseAnimate">Next ></button>
             </section>
-            <section id="mouseDelay" class="initiallyHidden">
-                <p>No problem. Type and submit <span class="standOut">$("#mouse").delay();</span> to start the delay timer.</p>
-                <p>After 3 seconds, the mouse will scurry along on its merry way.</p>
-                <input type="text" id="mouseDelayInput">
+            <section id="mouseAnimate">
+                <p>No problem. Type and submit <span class="standOut">$("#mouse").animate({"left": "+=150px"}, "fast").fadeOut();</span> to send the mouse on its merry way.</p>
+                <form id="mouseAnimateForm">
+                    <input type="text" id="mouseAnimateInput">
+                </form>
+                <p id="validateMessage" class="validateMessage"></p>
             </section>
-            <section id="mouseSuccess" class="initiallyHidden">
+            <section id="mouseSuccess">
                 <p>Yay!</p>
-                <button id="goToMouseDelay">< Back</button>
-                <button id="goToInvisibleWallIntro">Next ></button>
+                <button id="goToMouseAnimate">< Back</button>
+                <button id="goToBrickWallIntro">Next ></button>
             </section>
-        </section>
+        </section> -->
         <!-- MOUSE SECTION ENDS -->
 
         <!-- BRICK WALL SECTION BEGINS -->
         <!-- jQuery Effect Method used: .slideUp() -->
-        <section class="brickWall">
-            <section id="brickWallIntro" class="initiallyHidden">
+        <!-- <section class="brickWall">
+            <section id="brickWallIntro">
                 <p>Oh no! It looks like there is a wall blocking our way!</p>
                 <button id="goToMouseSuccess">< Back</button>
                 <button id="goToBrickWallSlideUp">Next ></button>
             </section>
-            <section id="brickWallSlideUp" class="initiallyHidden">
+            <section id="brickWallSlideUp">
                 <p>Type and submit <span class="standOut">$("#brickWall").slideUp();</span> to slide the wall up and out of the way.</p>
-                <input type="text" id="brickWallSlideUpInput">
+                <form id="brickWallSlideUpForm">
+                    <input type="text" id="brickWallSlideUpInput">
+                </form>
+                <p id="validateMessage" class="validateMessage"></p>
             </section>
-            <section id="brickWallSuccess" class="initiallyHidden">
+            <section id="brickWallSuccess">
                 <p>Nice!! You did it!</p>
                 <button id="goToBrickWallSlideUp">< Back</button>
                 <button id="goToEvilRobotIntro">Next ></button>
             </section>
-        </section>
+        </section> -->
         <!-- BRICK WALL SECTION ENDS -->
 
         <!-- EVIL ROBOT SECTION BEGINS -->
         <!-- jQuery Effect Method used: .fadeOut() -->
-        <section class="evilRobot">
-            <section id="evilRobotIntro" class="initiallyHidden">
+        <!-- <section class="evilRobot">
+            <section id="evilRobotIntro">
                 <p>Ahhh! It's an evil robot!!!</p>
                 <button id="goToBrickWallSuccess">< Back</button>
                 <button id="goToEvilRobotFadeOut">Next ></button>
             </section>
-            <section id="evilRobotFadeOut" class="initiallyHidden">
+            <section id="evilRobotFadeOut">
                 <p>No need to fear.</p>
                 <p>Type and submit <span class="standOut">$("#evilRobot").fadeOut;</span> to fade away the robot!</p>
-                <input type="text" id="evilRobotFadeOutInput">
+                <form id="evilRobotFadeOutForm">
+                    <input type="text" id="evilRobotFadeOutInput">
+                </form>
+                <p id="validateMessage" class="validateMessage"></p>
             </section>
-            <section id="evilRobotSuccess" class="initiallyHidden">
+            <section id="evilRobotSuccess">
                 <p>Whew! That was close!</p>
                 <button id="goToEvilRobotFadeOut">< Back</button>
                 <button id="goToTreasureIntro">Next ></button>
             </section>
-        </section>
+        </section> -->
         <!-- EVIL ROBOT SECTION ENDS -->
 
         <!-- TREASURE SECTION BEGINS -->
         <!-- jQuery Effect Method used: .fadeIn() -->
-        <section class="treasure">
-            <section id="treasureIntro" class="initiallyHidden">
+        <!-- <section class="treasure">
+            <section id="treasureIntro">
                 <p>We have arrived to the location of the treasure! But...where is it?</p>
             </section>
-            <section id="treasureFadeIn" class="initiallyHidden">
+            <section id="treasureFadeIn">
                 <p>Type and submit <span class="standOut">$("#treasure").fadeIn();</span> to reveal the treasure!</p>
-                <input type="text" id="treasureFadeInInput">
+                <form id="treasureFadeInForm">
+                    <input type="text" id="treasureFadeInInput">
+                </form>
+                <p id="validateMessage" class="validateMessage"></p>
             </section>
-            <section id="treasureSuccess" class="initiallyHidden">
+            <section id="treasureSuccess">
                 <p>You did it! Hurray!!! CONGRATULATIONS!!!!!</p>
                 <p>I'm so glad to have shared this journey with you!</p>
             </section>
-        </section>
+        </section> -->
         <!-- TREASURE SECTION ENDS -->
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

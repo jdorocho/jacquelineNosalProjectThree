@@ -286,8 +286,17 @@ a {
   color: #DA9F93;
 }
 
-.standOut {
+.standOut,
+.validateMessage {
   color: cornsilk;
+}
+
+.validateMessage {
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-left: 45px;
+  margin-top: 5px;
 }
 
 img {
@@ -336,7 +345,7 @@ body {
   position: absolute;
 }
 
-.JQ__mouth {
+.JQ__defaultMouth {
   width: 20px;
   height: 10px;
   border-radius: 0 0 50% 50%;
@@ -374,6 +383,39 @@ body {
 .rightCheek {
   top: 70px;
   right: 40px;
+}
+
+.JQ__happyEyes {
+  position: relative;
+  color: #272727;
+}
+
+.JQ__happyLeftEye,
+.JQ__happyRightEye {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  font-size: 3.6rem;
+  position: absolute;
+}
+
+.JQ__happyLeftEye {
+  top: 30px;
+  left: 50px;
+}
+
+.JQ__happyRightEye {
+  top: 30px;
+  left: 110px;
+}
+
+.JQ__wonderUhOhMouth {
+  width: 20px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #FA8072;
+  position: absolute;
+  top: 70px;
+  left: 75px;
 }
 
 @-webkit-keyframes bounce {
@@ -460,6 +502,204 @@ input {
   border-radius: 10px;
   width: 90%;
   font-size: 2.0rem;
+}
+
+.validateHighlight {
+  -webkit-box-shadow: 0px 0px 10px cornsilk;
+          box-shadow: 0px 0px 10px cornsilk;
+}
+
+.adventureItems {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  right: 350px;
+  bottom: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.adventureMargin {
+  margin-bottom: 75px;
+}
+
+.cookieBin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cookie {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: #C5973C;
+  position: relative;
+  -webkit-box-shadow: 5px 5px 0px #BD8820;
+          box-shadow: 5px 5px 0px #BD8820;
+}
+
+.chip {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #47330C;
+  position: relative;
+}
+
+.chip1 {
+  top: 10px;
+  left: 50px;
+}
+
+.chip2 {
+  top: 50px;
+  left: 10px;
+}
+
+.chip3 {
+  top: 10px;
+  left: 40px;
+}
+
+.chip4 {
+  top: 15px;
+  left: 70px;
+}
+
+.chip5 {
+  top: -30px;
+  left: 5px;
+}
+
+.chip6 {
+  left: 50px;
+}
+
+/* other cookie */
+.chip7 {
+  top: 10px;
+  left: 50px;
+}
+
+.chip8 {
+  top: 50px;
+  left: 10px;
+}
+
+.chip9 {
+  top: 10px;
+  left: 60px;
+}
+
+.chip10 {
+  top: 25px;
+  left: 50px;
+}
+
+.chip11 {
+  top: -30px;
+  left: 5px;
+}
+
+.chip12 {
+  top: -55px;
+  left: 70px;
+}
+
+.mouse {
+  position: relative;
+  left: 50px;
+}
+
+.mouseBody {
+  width: 115px;
+  height: 50px;
+  background-color: grey;
+  border-radius: 70px 150% 100% 30px;
+}
+
+.mouseEye {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: black;
+  position: absolute;
+  top: 15px;
+  left: 95px;
+  z-index: 1;
+}
+
+.mouseEar {
+  width: 30px;
+  height: 30px;
+  background-color: grey;
+  border-radius: 100%;
+  position: relative;
+  bottom: 70px;
+  left: 60px;
+}
+
+.mouseEarInner {
+  width: 15px;
+  height: 15px;
+  background-color: pink;
+  border-radius: 50px 50px 0px 0px;
+  position: absolute;
+  bottom: 82px;
+  left: 65px;
+}
+
+.mouseNose {
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: pink;
+  position: absolute;
+  left: 110px;
+  bottom: 55px;
+}
+
+.mouseTail1 {
+  background-color: pink;
+  border-radius: 100%;
+  width: 75px;
+  height: 5px;
+  position: relative;
+  bottom: 50px;
+  right: 70px;
+  z-index: -1;
+}
+
+.brickWall {
+  width: 300px;
+  -webkit-box-shadow: 5px 5px 0 #a04f2a;
+          box-shadow: 5px 5px 0 #a04f2a;
+}
+
+.brick {
+  background-color: #a04f2a;
+  height: 50px;
+  border: 2px solid lightgrey;
+  border-radius: 2px;
+}
+
+.edgeBrick {
+  width: calc(100% / 3);
+}
+
+.midRowBrick {
+  width: calc(100% / 4);
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .pinkHeart {
