@@ -570,8 +570,16 @@ input {
           align-items: flex-end;
 }
 
-.adventureMargin {
-  margin-bottom: 75px;
+.adventureMarginMouse {
+  margin-bottom: 77px;
+}
+
+.adventureMarginBrickWall {
+  margin-bottom: 41px;
+}
+
+.adventureMarginEvilRobot {
+  margin-bottom: 77px;
 }
 
 .cookieBin {
@@ -816,60 +824,6 @@ input {
   width: 200px;
   height: 300px;
   background-color: green;
-}
-
-.evilRobot__bolt {
-  width: 10px;
-  height: 10px;
-  background-color: silver;
-  position: absolute;
-  border-radius: 100%;
-  z-index: 1;
-}
-
-.evilRobot__bolt1 {
-  left: 165px;
-  bottom: 30px;
-}
-
-.evilRobot__bolt2 {
-  left: 165px;
-  bottom: 50px;
-}
-
-.evilRobot__bolt3 {
-  left: 165px;
-  bottom: 70px;
-}
-
-.evilRobot__bolt4 {
-  left: 165px;
-  bottom: 90px;
-}
-
-.evilRobot__bolt5 {
-  left: 165px;
-  bottom: 170px;
-}
-
-.evilRobot__bolt6 {
-  left: 165px;
-  bottom: 190px;
-}
-
-.evilRobot__bolt7 {
-  left: 165px;
-  bottom: 210px;
-}
-
-.evilRobot__bolt8 {
-  left: 165px;
-  bottom: 230px;
-}
-
-.evilRobot__bolt9 {
-  left: 165px;
-  bottom: 130px;
 }
 
 .evilRobot__leftArm {
