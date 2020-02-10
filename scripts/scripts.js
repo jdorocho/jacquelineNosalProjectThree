@@ -133,8 +133,8 @@ $(document).ready(function(){
 
     // (Page 4, #demoShow): Page the User lands on after clicking "Back" in (Page 5, #demoShowSuccess)
     $('#mainContent').on('click', '#goToDemoShow', function(){
-        $('#JQ__happyEyes').hide();
-        $('#JQ__defaultEyes').show();
+        $('#JQ').hide();
+        $('#textBox').addClass('textBoxExtraMargin');
         $('#demoShowSuccess').replaceWith(`
             <section id="demoShow">
                 <p>Now you can bring me back using show().</p>
@@ -170,6 +170,8 @@ $(document).ready(function(){
     $('#mainContent').on('click', '#goToDemoShowSuccess', function(){
         $('#JQ__defaultEyes').hide();
         $('#JQ__happyEyes').show();
+        $('#JQ__wonderUhOhMouth').hide();
+        $('#JQ__defaultMouth').show();
         $('#cookiesIntro').replaceWith(`
             <section id="demoShowSuccess">
                 <p>Way to go!</p>
