@@ -12,6 +12,7 @@
     margin-bottom: 75px;
 }
 
+// COOKIES 
 .cookieBin {
     display: flex;
 }
@@ -62,8 +63,7 @@
     left: 50px;
 }
 
-  /* other cookie */
-
+// cookie #2
 .chip7 {
     top: 10px;
     left: 50px;
@@ -94,6 +94,7 @@
     left: 70px;
 }
 
+//  MOUSE
 .mouse {
     position: relative;
     left: 50px;
@@ -158,6 +159,7 @@
     z-index: -1;
 }
 
+// BRICK WALL
 .brickWall {
     width: 300px;
     box-shadow: 5px 5px 0 #a04f2a;
@@ -180,4 +182,268 @@
 
 .row {
     display: flex;
+}
+
+// EVIL ROBOT
+@keyframes blink {
+    50% {
+        background-image: radial-gradient(circle, red 15%, transparent 40%);
+    }
+    100% {
+        background-image: radial-gradient(circle, red 55%, transparent 70%);
+    }
+}
+
+.evilRobot {
+    position: absolute;
+    left: 250px;
+    top: 10px;
+}
+
+.evilRobot__head {
+    width: 180px;
+    height: 0;
+    border-top: 150px solid green;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    position: relative;
+    left: 10px;
+}
+
+.evilRobot__eye {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-image: radial-gradient(circle, white 15%, transparent 40%);
+    border-radius: 100%;
+    animation: blink 0.5s infinite;
+}
+
+.evilRobot__leftEye {
+    bottom: 50px;
+    left: 25px;
+}
+
+.evilRobot__rightEye {
+    bottom: 50px;
+    right: 25px;
+}
+
+.evilRobot__mouth {
+    width: 50px;
+    height: 50px;
+    background-color: silver;
+    position: relative;
+    bottom: 60px;
+    left: 15px;
+    border-radius: 100% 100% 0 0;
+}
+
+.evilRobot__torso {
+    width: 200px;
+    height: 300px;
+    background-color: green;
+}
+
+.evilRobot__bolt {
+    width: 10px;
+    height: 10px;
+    background-color: silver;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.evilRobot__bolt1 {
+    left: 165px;
+    bottom: 30px;
+}
+
+.evilRobot__bolt2 {
+    left: 165px;
+    bottom: 50px;
+}
+
+.evilRobot__bolt3 {
+    left: 165px;
+    bottom: 70px;
+}
+
+.evilRobot__bolt4 {
+    left: 165px;
+    bottom: 90px;
+}
+
+.evilRobot__bolt5 {
+    left: 165px;
+    bottom: 170px;
+}
+
+.evilRobot__bolt6 {
+    left: 165px;
+    bottom: 190px;
+}
+
+.evilRobot__bolt7 {
+    left: 165px;
+    bottom: 210px;
+}
+
+.evilRobot__bolt8 {
+    left: 165px;
+    bottom: 230px;
+}
+
+.evilRobot__bolt9 {
+    left: 165px;
+    bottom: 130px;
+}
+
+.evilRobot__leftArm {
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
+    background-color: green;
+    transform: rotate(200deg);
+    position: relative;
+    top: -55px;
+    left: -135px;
+}
+
+.evilRobot__rightArm {
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
+    background-color: green;
+    transform: rotate(-200deg);
+    position: relative;
+    top: -105px;
+    left: 185px;
+}
+
+.evilRobot__belt {
+    width: 200px;
+    height: 30px;
+    background-color: darkmagenta;
+    position: relative;
+    top: 150px;
+}
+
+.evilRobot__wheel {
+    height: 40px;
+    width: 40px;
+    background: lightgrey;
+    border-radius: 40px;
+    border: 15px solid darkgrey;
+    position: absolute;
+    z-index: -1;
+}
+
+.evilRobot__wheel1 {
+    bottom: -30px;
+    left: 145px;
+}
+
+.evilRobot__wheel2 {
+    bottom: -30px;
+    left: 15px;
+}
+
+// TREASURE
+.treasure {
+    position: relative;
+    top: 150px;
+}
+
+.lid {
+    width: 300px;
+    height: 150px;
+    background-color: #654321;
+    border-radius: 16px;
+    border: 16px solid saddlebrown;
+    position: relative;
+    left: 165px;
+}
+
+.gold {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: yellow;
+    position: absolute;
+    z-index: 1;
+}
+
+.gold1 {
+    left: -10px;
+    top: 105px;
+}
+
+.gold2 {
+    left: 40px;
+    top: 110px;
+}
+
+.gold3 {
+    left: 110px;
+    top: 115px;
+}
+
+.gold4 {
+    left: 190px;
+    top: 119px;
+}
+
+.gold5 {
+    left: 240px;
+    top: 108px;
+}
+
+.bottom {
+    width: 400px;
+    height: 200px;
+    background-color: saddlebrown;
+    border-radius: 16px;
+    position: relative;
+    left: 115px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.bottomBoard {
+    border-bottom: 10px solid #654321;
+    height: 50px;
+}
+
+.lock {
+    width: 70px;
+    height: 90px;
+    border-radius: 16px;
+    background-color: gold;
+    position: absolute;
+    left: 165px;
+}
+
+.lockKeyHole1 {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #d07707;
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+.lockKeyHole2 {
+    width: 15px;
+    height: 25px;
+    border-radius: 50px 50px;
+    background-color: #d07707;
+    position: relative;
+    top: 5px;
+    left: 27px;
 }
