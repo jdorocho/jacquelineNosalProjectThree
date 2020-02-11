@@ -8,16 +8,17 @@
     align-items: flex-end;
 }
 
-.adventureMarginMouse {
-    margin-bottom: 77px;
-}
-
-.adventureMarginBrickWall {
-    margin-bottom: 41px;
-}
-
-.adventureMarginEvilRobot {
-    margin-bottom: 77px;
+// adventure margins 
+.adventureMargin {
+    &__mouse {
+        margin-bottom: 77px;
+    }
+    &__brickWall {
+        margin-bottom: 41px;
+    }
+    &__evilRobot {
+        margin-bottom: 77px;
+    }
 }
 
 // COOKIES 
@@ -26,170 +27,147 @@
 }
 
 .cookie {
+    background-color: #C5973C;
+    border-radius: 100%;
+    box-shadow: 5px 5px 0px #BD8820;
     width: 100px;
     height: 100px;
-    border-radius: 100%;
-    background-color: #C5973C;
     position: relative;
-    box-shadow: 5px 5px 0px #BD8820;
+    &__chip {
+        background-color: #47330C;
+        border-radius: 100%;
+        width: 15px;
+        height: 15px;
+        position: relative;
+    }
+    &__chip1 {
+        top: 10px;
+        left: 50px;
+    }
+    &__chip2 {
+        top: 50px;
+        left: 10px;
+    }
+    &__chip3 {
+        top: 10px;
+        left: 40px;
+    }
+    &__chip4 {
+        top: 15px;
+        left: 70px;
+    }
+    &__chip5 {
+        top: -30px;
+        left: 5px;
+    }
+    &__chip6 {
+        left: 50px;
+    }
+    // cookie2
+    &__chip7 {
+        top: 10px;
+        left: 50px;
+    }
+    &__chip8 {
+        top: 50px;
+        left: 10px;
+    }
+    &__chip9 {
+        top: 10px;
+        left: 60px;
+    }
+    &__chip10 {
+        top: 25px;
+        left: 50px;
+    }
+    &__chip11 {
+        top: -30px;
+        left: 5px;
+    }
+    &__chip12 {
+        top: -55px;
+        left: 70px;
+    }
 }
 
-.chip {
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
-    background-color: #47330C;
-    position: relative;
-}
-
-.chip1 {
-    top: 10px;
-    left: 50px;
-}
-
-.chip2 {
-    top: 50px;
-    left: 10px;
-}
-
-.chip3 {
-    top: 10px;
-    left: 40px;
-}
-
-.chip4 {
-    top: 15px;
-    left: 70px;
-}
-
-.chip5 {
-    top: -30px;
-    left: 5px;
-}
-
-.chip6 {
-    left: 50px;
-}
-
-// cookie #2
-.chip7 {
-    top: 10px;
-    left: 50px;
-}
-
-.chip8 {
-    top: 50px;
-    left: 10px;
-}
-
-.chip9 {
-    top: 10px;
-    left: 60px;
-}
-
-.chip10 {
-    top: 25px;
-    left: 50px;
-}
-
-.chip11 {
-    top: -30px;
-    left: 5px;
-}
-
-.chip12 {
-    top: -55px;
-    left: 70px;
-}
-
-//  MOUSE
+// MOUSE
 .mouse {
     position: relative;
     left: 50px;
-}
-
-.mouseBody {
-    width: 115px;
-    height: 50px;
-    background-color: grey;
-    border-radius: 70px 150% 100% 30px;
-}
-
-.mouseEye {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: black;
-    position: absolute;
-    top: 15px;
-    left: 95px;
-    z-index: 1;
-}
-
-.mouseEar {
-    width: 30px;
-    height: 30px;
-    background-color: grey;
-    border-radius: 100%;
-    position: relative;
-    bottom: 70px;
-    left: 60px;
-}
-
-.mouseEarInner {
-    width: 15px;
-    height: 15px;
-    background-color: pink;
-    border-radius: 50px 50px 0px 0px;
-    position: absolute;
-    bottom: 82px;
-    left: 65px;
-}
-
-.mouseNose {
-    width: 5px;
-    height: 5px;
-    border-radius: 100%;
-    background-color: pink;
-    position: absolute;
-    left: 110px;
-    bottom: 55px;
-}
-
-.mouseTail1 {
-    background-color: pink;
-    border-radius: 100%;
-    width: 75px;
-    height: 5px;
-    position: relative;
-    bottom: 50px;
-    right: 70px;
-    z-index: -1;
+    &__body {
+        background-color: grey;
+        border-radius: 70px 150% 100% 30px;
+        width: 115px;
+        height: 50px;
+    }
+    &__eye {
+        background-color: black;
+        border-radius: 100%;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 15px;
+        left: 95px;
+        z-index: 1;
+    }
+    &__ear {
+        background-color: grey;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        bottom: 70px;
+        left: 60px;
+    }
+    &__earInner {
+        background-color: pink;
+        border-radius: 50px 50px 0px 0px;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        bottom: 82px;
+        left: 65px;
+    }
+    &__nose {
+        background-color: pink;
+        border-radius: 100%;
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        left: 110px;
+        bottom: 55px;
+    }
+    &__tail {
+        background-color: pink;
+        border-radius: 100%;
+        width: 75px;
+        height: 5px;
+        position: relative;
+        bottom: 50px;
+        right: 70px;
+        z-index: -1;
+    }
 }
 
 // BRICK WALL
 .brickWall {
-    width: 300px;
     box-shadow: 5px 5px 0 #a04f2a;
-}
-
-.brick {
-    background-color: #a04f2a;
-    height: 50px;
-    border: 2px solid lightgrey;
-    border-radius: 2px;
-}
-
-.edgeBrick {
-    width: calc(100% / 3);
-}
-
-.midRowBrick {
-    width: calc(100% / 4);
-}
-
-.row {
-    display: flex;
+    width: 300px;
+    &__row {
+        display: flex;
+    }
+    &__brick {
+        background-color: #a04f2a;
+        border-radius: 2px;
+        border: 2px solid lightgrey;
+        height: 50px;
+    }
+    &__edgeBrick {
+        width: calc(100% / 3);
+    }
+    &__midRowBrick {
+        width: calc(100% / 4);
+    }
 }
 
 // EVIL ROBOT
@@ -204,200 +182,176 @@
 
 .evilRobot {
     position: absolute;
-    left: 250px;
     top: 10px;
-}
-
-.evilRobot__head {
-    width: 180px;
-    height: 0;
-    border-top: 150px solid green;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    position: relative;
-    left: 10px;
-}
-
-.evilRobot__eye {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    background-image: radial-gradient(circle, white 15%, transparent 40%);
-    border-radius: 100%;
-    animation: blink 0.5s infinite;
-}
-
-.evilRobot__leftEye {
-    bottom: 50px;
-    left: 25px;
-}
-
-.evilRobot__rightEye {
-    bottom: 50px;
-    right: 25px;
-}
-
-.evilRobot__mouth {
-    width: 50px;
-    height: 50px;
-    background-color: silver;
-    position: relative;
-    bottom: 60px;
-    left: 15px;
-    border-radius: 100% 100% 0 0;
-}
-
-.evilRobot__torso {
-    width: 200px;
-    height: 300px;
-    background-color: green;
-}
-
-.evilRobot__leftArm {
-    font-family: sans-serif;
-    font-weight: bold;
-    width: 150px;
-    height: 50px;
-    background-color: green;
-    transform: rotate(200deg);
-    position: relative;
-    top: -55px;
-    left: -135px;
-}
-
-.evilRobot__rightArm {
-    font-family: sans-serif;
-    font-weight: bold;
-    width: 150px;
-    height: 50px;
-    background-color: green;
-    transform: rotate(-200deg);
-    position: relative;
-    top: -105px;
-    left: 185px;
-}
-
-.evilRobot__belt {
-    width: 200px;
-    height: 30px;
-    background-color: darkmagenta;
-    position: relative;
-    top: 150px;
-}
-
-.evilRobot__wheel {
-    height: 40px;
-    width: 40px;
-    background: lightgrey;
-    border-radius: 40px;
-    border: 15px solid darkgrey;
-    position: absolute;
-    z-index: -1;
-}
-
-.evilRobot__wheel1 {
-    bottom: -30px;
-    left: 145px;
-}
-
-.evilRobot__wheel2 {
-    bottom: -30px;
-    left: 15px;
+    left: 250px;
+    &__head {
+        border-top: 150px solid green;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        width: 180px;
+        height: 0;
+        position: relative;
+        left: 10px;
+    }
+    &__eye {
+        background-image: radial-gradient(circle, white 15%, transparent 40%);
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        animation: blink 0.5s infinite;
+    }
+    &__leftEye {
+        bottom: 50px;
+        left: 25px;
+    }
+    &__rightEye {
+        bottom: 50px;
+        right: 25px;
+    }
+    &__mouth {
+        background-color: silver;
+        border-radius: 100% 100% 0 0;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        bottom: 60px;
+        left: 15px;
+    }
+    &__torso {
+        background-color: green;
+        width: 200px;
+        height: 300px;
+    }
+    &__leftArm {
+        background-color: green;
+        font-family: sans-serif;
+        font-weight: bold;
+        width: 150px;
+        height: 50px;
+        position: relative;
+        top: -55px;
+        left: -135px;
+        transform: rotate(200deg);
+    }
+    &__rightArm {
+        background-color: green;
+        font-family: sans-serif;
+        font-weight: bold;
+        width: 150px;
+        height: 50px;
+        position: relative;
+        top: -105px;
+        left: 185px;
+        transform: rotate(-200deg);
+    }
+    &__belt {
+        width: 200px;
+        height: 30px;
+        background-color: darkmagenta;
+        position: relative;
+        top: 150px;
+    }
+    &__wheel {
+        background-color: lightgrey;
+        border-radius: 40px;
+        border: 15px solid darkgrey;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        z-index: -1;
+    }
+    &__wheel1 {
+        bottom: -30px;
+        left: 145px;
+    }
+    &__wheel2 {
+        bottom: -30px;
+        left: 15px;
+    }
 }
 
 // TREASURE
 .treasure {
     position: relative;
     top: 150px;
-}
-
-.lid {
-    width: 300px;
-    height: 150px;
-    background-color: #654321;
-    border-radius: 16px;
-    border: 16px solid saddlebrown;
-    position: relative;
-    left: 165px;
-}
-
-.gold {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    background-color: yellow;
-    position: absolute;
-    z-index: 1;
-}
-
-.gold1 {
-    left: -10px;
-    top: 105px;
-}
-
-.gold2 {
-    left: 40px;
-    top: 110px;
-}
-
-.gold3 {
-    left: 110px;
-    top: 115px;
-}
-
-.gold4 {
-    left: 190px;
-    top: 119px;
-}
-
-.gold5 {
-    left: 240px;
-    top: 108px;
-}
-
-.bottom {
-    width: 400px;
-    height: 200px;
-    background-color: saddlebrown;
-    border-radius: 16px;
-    position: relative;
-    left: 115px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    z-index: 2;
-}
-
-.bottomBoard {
-    border-bottom: 10px solid #654321;
-    height: 50px;
-}
-
-.lock {
-    width: 70px;
-    height: 90px;
-    border-radius: 16px;
-    background-color: gold;
-    position: absolute;
-    left: 165px;
-}
-
-.lockKeyHole1 {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    background-color: #d07707;
-    position: relative;
-    top: 10px;
-    left: 20px;
-}
-
-.lockKeyHole2 {
-    width: 15px;
-    height: 25px;
-    border-radius: 50px 50px;
-    background-color: #d07707;
-    position: relative;
-    top: 5px;
-    left: 27px;
+    &__lid {
+        background-color: #654321;
+        border-radius: 16px;
+        border: 16px solid saddlebrown;
+        width: 300px;
+        height: 150px;
+        position: relative;
+        left: 165px;
+    }
+    &__gold {
+        background-color: yellow;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        z-index: 1;
+    }
+    &__gold1 {
+        top: 105px;
+        left: -10px;
+    }
+    &__gold2 {
+        top: 110px;
+        left: 40px;
+    }
+    &__gold3 {
+        top: 115px;
+        left: 110px;
+    }
+    &__gold4 {
+        top: 119px;
+        left: 190px;
+    }
+    &__gold5 {
+        top: 108px;
+        left: 240px;
+    }
+    &__bottom {
+        background-color: saddlebrown;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 400px;
+        height: 200px;
+        position: relative;
+        left: 115px;
+        z-index: 2;
+    }
+    &__bottomBoard {
+        border-bottom: 10px solid #654321;
+        height: 50px;
+    }
+    &__lock {
+        background-color: gold;
+        border-radius: 16px;
+        width: 70px;
+        height: 90px;
+        position: absolute;
+        left: 165px;
+    }
+    &__lockKeyHole1 {
+        background-color: #d07707;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 10px;
+        left: 20px;
+    }
+    &__lockKeyHole2 {
+        background-color: #d07707;
+        border-radius: 50px 50px;
+        width: 15px;
+        height: 25px;
+        position: relative;
+        top: 5px;
+        left: 27px;
+    }
 }

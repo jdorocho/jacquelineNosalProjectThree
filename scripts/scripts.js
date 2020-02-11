@@ -1,4 +1,44 @@
 $(document).ready(function(){
+    // Facial Expressions of JQ: Default
+    const defaultJQ = function() {
+        $('#JQ__happyEyes').hide();
+        $('#JQ__shockedMouth').hide();
+        $('#JQ__defaultEyes').show();
+        $('#JQ__defaultMouth').show();
+    }
+    
+    // Facial Expressions of JQ: Happy
+    const happyJQ = function() {
+        $('#JQ__defaultEyes').hide();
+        $('#JQ__happyEyes').show();
+        $('#JQ__shockedMouth').hide();
+        $('#JQ__defaultMouth').show();
+    }
+    
+    // Facial Expressions of JQ: Shocked 
+    const shockedJQ = function() {
+        $('#JQ__happyEyes').hide();
+        $('#JQ__defaultMouth').hide();
+        $('#JQ__defaultEyes').show();
+        $('#JQ__shockedMouth').show();
+    }
+
+    // (Page 0, #intro): On page load 
+    $('#JQ__eyes').append(`
+        <div id="JQ__happyEyes">
+            <div class="JQ__happyLeftEye">
+            (
+            </div>
+            <div class="JQ__happyRightEye">
+            (
+            </div>
+        </div>
+    `);
+    $('#JQ__mouth').append(`
+        <div id="JQ__shockedMouth" class="JQ__shockedMouth"></div>
+    `);
+    defaultJQ();
+
     // (Page 1, #demoIntro): Page the User lands on after clicking "Let's Go!" in (Page 0, #intro)
     $('#mainContent').on('click', '#goToDemoIntro', function(){
         $('#intro').replaceWith(`
@@ -17,6 +57,7 @@ $(document).ready(function(){
                 <p>Type <span class="standOut">$("#JQ").hide();</span>, and press enter to submit.</p>
                 <p>This is case-sensitive, and spacing matters!</p>
                 <form id="demoHideForm">
+                    <label for="demoHideInput" class="sr-only">Type your answer and press enter to submit</label>
                     <input type="text" id="demoHideInput">
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
@@ -35,7 +76,7 @@ $(document).ready(function(){
             $('input').addClass('validateHighlight');
         } else if (demoHideAnswer === '$("#JQ").hide();') {
             $('#JQ').hide();
-            $('#textBox').addClass('textBoxExtraMargin');
+            $('#textBox').addClass('textBox__extraMargin');
             $('input').val('');
             $('#demoHide').replaceWith(`
                 <section id="demoHideSuccess">
@@ -58,6 +99,7 @@ $(document).ready(function(){
                 <p>Type <span class="standOut">$("#JQ").show();</span>, and press enter to submit.</p>
                 <p>Remember: This is case-sensitive, and spacing matters!</p>
                 <form id="demoShowForm">
+                    <label for="demoShowInput" class="sr-only">Type your answer and press enter to submit</label>
                     <input type="text" id="demoShowInput">
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
@@ -76,24 +118,14 @@ $(document).ready(function(){
             $('input').addClass('validateHighlight');
         } else if (demoShowAnswer === '$("#JQ").show();') {
             $('#JQ').show();
-            $('#textBox').removeClass('textBoxExtraMargin');
+            happyJQ();
+            $('#textBox').removeClass('textBox__extraMargin');
             $('input').val('');
             $('#demoShow').replaceWith(`
                 <section id="demoShowSuccess">
                     <p>Way to go!</p>
                     <button id="goToCookiesIntro">Next ></button>
                 </section>
-            `);
-            $('#JQ__defaultEyes').hide();
-            $('#JQ__eyes').append(`
-                <div id="JQ__happyEyes">
-                    <div class="JQ__happyLeftEye">
-                    (
-                    </div>
-                    <div class="JQ__happyRightEye">
-                    (
-                    </div>
-                </div>
             `);
         } else {
             $('#validateMessage').text("Hmm...let's try again!");
@@ -103,12 +135,7 @@ $(document).ready(function(){
 
     // (Page 6, #cookiesIntro): Page the User lands on after clicking "Next" in (Page 5, #demoShowSuccess)
     $('#mainContent').on('click', '#goToCookiesIntro', function(){
-        $('#JQ__happyEyes').hide();
-        $('#JQ__defaultEyes').show();
-        $('#JQ__defaultMouth').hide();
-        $('#JQ__mouth').append(`
-            <div id="JQ__wonderUhOhMouth" class="JQ__wonderUhOhMouth"></div>
-        `);
+        shockedJQ();
         $('#demoShowSuccess').replaceWith(`
             <section id="cookiesIntro">
                 <p>I have a very important question!</p>
@@ -120,13 +147,13 @@ $(document).ready(function(){
 
     // (Page 7, #cookiesShow): Page the User lands on after clicking "Next" in (Page 6, #cookiesIntro)
     $('#mainContent').on('click', '#goToCookiesShow', function(){
-        $('#JQ__wonderUhOhMouth').hide();
-        $('#JQ__defaultMouth').show();
+        defaultJQ();
         $('#cookiesIntro').replaceWith(`
             <section id="cookiesShow">
                 <p>With snacks!</p>
                 <p>Type <span class="standOut">$("#cookies").show();</span>, and press enter to show some cookies!</p>
                 <form id="cookiesShowForm">
+                    <label for="cookiesShowInput" class="sr-only">Type your answer and press enter to submit</label>
                     <input type="text" id="cookiesShowInput">
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
@@ -144,24 +171,25 @@ $(document).ready(function(){
             $('#validateMessage').text("Please input an answer!");
             $('input').addClass('validateHighlight');
         } else if (cookiesShowAnswer === '$("#cookies").show();') {
+            happyJQ();
             $('#adventureItems').append(`
                 <div id="cookieBin" class="cookieBin">
                     <div class="cookie cookie1">
-                        <div class="chip chip1"></div>
-                        <div class="chip chip2"></div>
-                        <div class="chip chip3"></div>
-                        <div class="chip chip4"></div>
-                        <div class="chip chip5"></div>
-                        <div class="chip chip6"></div>
+                        <div class="cookie__chip cookie__chip1"></div>
+                        <div class="cookie__chip cookie__chip2"></div>
+                        <div class="cookie__chip cookie__chip3"></div>
+                        <div class="cookie__chip cookie__chip4"></div>
+                        <div class="cookie__chip cookie__chip5"></div>
+                        <div class="cookie__chip cookie__chip6"></div>
                     </div>
                 
                     <div class="cookie cookie2">
-                        <div class="chip chip7"></div>
-                        <div class="chip chip8"></div>
-                        <div class="chip chip9"></div>
-                        <div class="chip chip10"></div>
-                        <div class="chip chip11"></div>
-                        <div class="chip chip12"></div>
+                        <div class="cookie__chip cookie__chip7"></div>
+                        <div class="cookie__chip cookie__chip8"></div>
+                        <div class="cookie__chip cookie__chip9"></div>
+                        <div class="cookie__chip cookie__chip10"></div>
+                        <div class="cookie__chip cookie__chip11"></div>
+                        <div class="cookie__chip cookie__chip12"></div>
                     </div>
                 </div>
             `);
@@ -172,8 +200,6 @@ $(document).ready(function(){
                     <button id="goToMouseIntro">Next ></button>
                 </section>
             `);
-            $('#JQ__defaultEyes').hide();
-            $('#JQ__happyEyes').show();
         } else {
             $('#validateMessage').text("Hmm...let's try again!");
             $('input').addClass('validateHighlight');
@@ -182,19 +208,16 @@ $(document).ready(function(){
 
     // (Page 9, #mouseIntro): Page the User lands on after clicking "Next" in (Page 8, #cookiesSuccess)
     $('#mainContent').on('click', '#goToMouseIntro', function(){
-        $('#JQ__happyEyes').hide();
-        $('#JQ__defaultEyes').show();
-        $('#JQ__defaultMouth').hide();
-        $('#JQ__wonderUhOhMouth').show();
+        shockedJQ();
         $('#cookieBin').hide();
         $('#adventureItems').append(`
             <div id="mouse" class="mouse">
-                <div class="mouseBody"></div>
-                <div class="mouseEye"></div>
-                <div class="mouseEar"></div>
-                <div class="mouseEarInner"></div>
-                <div class="mouseNose"></div>
-                <div class="mouseTail1"></div>
+                <div class="mouse__body"></div>
+                <div class="mouse__eye"></div>
+                <div class="mouse__ear"></div>
+                <div class="mouse__earInner"></div>
+                <div class="mouse__nose"></div>
+                <div class="mouse__tail"></div>
             </div>
         `);
         $('#cookiesSuccess').replaceWith(`
@@ -207,13 +230,13 @@ $(document).ready(function(){
 
     // (Page 10, #mouseAnimate): Page the User lands on after clicking "Next" in (Page 9, #mouseIntro)
     $('#mainContent').on('click', '#goToMouseAnimate', function(){
-        $('#JQ__wonderUhOhMouth').hide();
-        $('#JQ__defaultMouth').show();
-        $('#adventureItems').addClass('adventureMarginMouse');
+        defaultJQ();
+        $('#adventureItems').addClass('adventureMargin__mouse');
         $('#mouseIntro').replaceWith(`
             <section id="mouseAnimate">
                 <p>No problem. Type and submit <span class="standOut">$("#mouse").animate({"left": "+=150px"}, "fast").fadeOut();</span> to send the mouse on its merry way.</p>
                 <form id="mouseAnimateForm">
+                    <label for="mouseAnimateInput" class="sr-only">Type your answer and press enter to submit</label>
                     <input type="text" id="mouseAnimateInput">
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
@@ -231,17 +254,16 @@ $(document).ready(function(){
             $('#validateMessage').text("Please input an answer!");
             $('input').addClass('validateHighlight');
         } else if (mouseAnimateAnswer === '$("#mouse").animate({"left": "+=150px"}, "fast").fadeOut();') {
+            happyJQ();
             $('#mouse').animate({"left": "+=150px"}, "fast").fadeOut();
             $('input').val('');
-            $('#adventureItems').removeClass('adventureMarginMouse');
+            $('#adventureItems').removeClass('adventureMargin__mouse');
             $('#mouseAnimate').replaceWith(`
                 <section id="mouseSuccess">
                 <p>Yay!</p>
                     <button id="goToBrickWallIntro">Next ></button>
                 </section>
             `);
-            $('#JQ__defaultEyes').hide();
-            $('#JQ__happyEyes').show();
         } else {
             $('#validateMessage').text("Hmm...let's try again!");
             $('input').addClass('validateHighlight');
@@ -250,27 +272,24 @@ $(document).ready(function(){
 
     // (Page 12, #brickWallIntro): Page the User lands on after clicking "Next" in (Page 11, #mouseSuccess)
     $('#mainContent').on('click', '#goToBrickWallIntro', function(){
-        $('#JQ__happyEyes').hide();
-        $('#JQ__defaultEyes').show();
-        $('#JQ__defaultMouth').hide();
-        $('#JQ__wonderUhOhMouth').show();
+        shockedJQ();
         $('#adventureItems').append(`
             <div id="brickWall" class="brickWall">
-                <div class="row">
-                <div class="brick edgeBrick"></div>
-                <div class="brick edgeBrick"></div>
-                <div class="brick edgeBrick"></div>
+                <div class="brickWall__row">
+                    <div class="brickWall__brick brickWall__edgeBrick"></div>
+                    <div class="brickWall__brick brickWall__edgeBrick"></div>
+                    <div class="brickWall__brick brickWall__edgeBrick"></div>
                 </div>
-                <div class="row midRow">
-                <div class="brick midRowBrick"></div>
-                <div class="brick midRowBrick"></div>
-                <div class="brick midRowBrick"></div>
-                <div class="brick midRowBrick"></div>
+                <div class="brickWall__row midRow">
+                    <div class="brickWall__brick brickWall__midRowBrick"></div>
+                    <div class="brickWall__brick brickWall__midRowBrick"></div>
+                    <div class="brickWall__brick brickWall__midRowBrick"></div>
+                    <div class="brickWall__brick brickWall__midRowBrick"></div>
                 </div>
-                <div class="row">
-                <div class="brick edgeBrick"></div>
-                <div class="brick edgeBrick"></div>
-                <div class="brick edgeBrick"></div>
+                <div class="brickWall__row">
+                    <div class="brickWall__brick brickWall__edgeBrick"></div>
+                    <div class="brickWall__brick brickWall__edgeBrick"></div>
+                    <div class="brickWall__brick brickWall__edgeBrick"></div>
                 </div>
             </div>
         `);
@@ -284,13 +303,13 @@ $(document).ready(function(){
 
     // (Page 13, #brickWallSlideUp): Page the User lands on after clicking "Next" in (Page 12, #brickWallIntro)
     $('#mainContent').on('click', '#goToBrickWallSlideUp', function(){
-        $('#JQ__wonderUhOhMouth').hide();
-        $('#JQ__defaultMouth').show();
-        $('#adventureItems').addClass('adventureMarginBrickWall');
+        defaultJQ();
+        $('#adventureItems').addClass('adventureMargin__brickWall');
         $('#brickWallIntro').replaceWith(`
             <section id="brickWallSlideUp">
                 <p>Type and submit <span class="standOut">$("#brickWall").slideUp();</span> to slide the wall out of the way.</p>
                 <form id="brickWallSlideUpForm">
+                    <label for="brickWallSlideUpInput" class="sr-only">Type your answer and press enter to submit</label>
                     <input type="text" id="brickWallSlideUpInput">
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
@@ -308,17 +327,16 @@ $(document).ready(function(){
             $('#validateMessage').text("Please input an answer!");
             $('input').addClass('validateHighlight');
         } else if (brickWallSlideUpAnswer === '$("#brickWall").slideUp();') {
+            happyJQ();
             $('#brickWall').slideUp();
             $('input').val('');
-            $('#adventureItems').removeClass('adventureMarginBrickWall');
+            $('#adventureItems').removeClass('adventureMargin__brickWall');
             $('#brickWallSlideUp').replaceWith(`
                 <section id="brickWallSuccess">
                     <p>Nice!! You did it!</p>
                     <button id="goToEvilRobotIntro">Next ></button>
                 </section>
             `);
-            $('#JQ__defaultEyes').hide();
-            $('#JQ__happyEyes').show();
         } else {
             $('#validateMessage').text("Hmm...let's try again!");
             $('input').addClass('validateHighlight');
@@ -327,10 +345,7 @@ $(document).ready(function(){
 
     // (Page 15, #evilRobotIntro): Page the User lands on after clicking "Next" in (Page 14, #brickWallSuccess)
     $('#mainContent').on('click', '#goToEvilRobotIntro', function(){
-        $('#JQ__happyEyes').hide();
-        $('#JQ__defaultEyes').show();
-        $('#JQ__defaultMouth').hide();
-        $('#JQ__wonderUhOhMouth').show();
+        shockedJQ();
         $('#adventureItems').append(`
             <div id="evilRobot" class="evilRobot">
                 <div class="evilRobot__head">
@@ -357,14 +372,14 @@ $(document).ready(function(){
 
     // (Page 16, #evilRobotFadeOut): Page the User lands on after clicking "Next" in (Page 15, #evilRobotIntro)
     $('#mainContent').on('click', '#goToEvilRobotFadeOut', function(){
-        $('#JQ__wonderUhOhMouth').hide();
-        $('#JQ__defaultMouth').show();
-        $('#adventureItems').addClass('adventureMarginEvilRobot');
+        defaultJQ();
+        $('#adventureItems').addClass('adventureMargin__evilRobot');
         $('#evilRobotIntro').replaceWith(`
             <section id="evilRobotFadeOut">
                 <p>No need to fear.</p>
                 <p>Type and submit <span class="standOut">$("#evilRobot").fadeOut();</span> to fade the robot away!</p>
                 <form id="evilRobotFadeOutForm">
+                    <label for="evilRobotFadeOutInput" class="sr-only">Type your answer and press enter to submit</label>
                     <input type="text" id="evilRobotFadeOutInput">
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
@@ -382,17 +397,16 @@ $(document).ready(function(){
             $('#validateMessage').text("Please input an answer!");
             $('input').addClass('validateHighlight');
         } else if (evilRobotFadeOutAnswer === '$("#evilRobot").fadeOut();') {
+            happyJQ();
             $('#evilRobot').fadeOut();
             $('input').val('');
-            $('#adventureItems').removeClass('adventureMarginEvilRobot');
+            $('#adventureItems').removeClass('adventureMargin__evilRobot');
             $('#evilRobotFadeOut').replaceWith(`
                 <section id="evilRobotSuccess">
                     <p>Whew! That was close!</p>
                     <button id="goToTreasureIntro">Next ></button>
                 </section>
             `);
-            $('#JQ__defaultEyes').hide();
-            $('#JQ__happyEyes').show();
         } else {
             $('#validateMessage').text("Hmm...let's try again!");
             $('input').addClass('validateHighlight');
@@ -401,10 +415,7 @@ $(document).ready(function(){
 
     // (Page 18, #treasureIntro): Page the User lands on after clicking "Next" in (Page 17, #evilRobotSuccess)
     $('#mainContent').on('click', '#goToTreasureIntro', function(){
-        $('#JQ__happyEyes').hide();
-        $('#JQ__defaultEyes').show();
-        $('#JQ__defaultMouth').hide();
-        $('#JQ__wonderUhOhMouth').show();
+        shockedJQ();
         $('#evilRobotSuccess').replaceWith(`
             <section id="treasureIntro">
                 <p>We have arrived at the location of the treasure! But...where is it?</p>
@@ -413,20 +424,20 @@ $(document).ready(function(){
         `);
         $('#adventureItems').append(`
             <div id="treasure" class="treasure">
-                <div class="lid">
-                    <div class="gold gold1"></div>
-                    <div class="gold gold2"></div>
-                    <div class="gold gold3"></div>
-                    <div class="gold gold4"></div>
-                    <div class="gold gold5"></div>
+                <div class="treasure__lid">
+                    <div class="treasure__gold treasure__gold1"></div>
+                    <div class="treasure__gold treasure__gold2"></div>
+                    <div class="treasure__gold treasure__gold3"></div>
+                    <div class="treasure__gold treasure__gold4"></div>
+                    <div class="treasure__gold treasure__gold5"></div>
                 </div>
-                <div class="bottom">
-                    <div class="bottomBoard board1"></div>
-                    <div class="bottomBoard board2"></div>
-                    <div class="bottomBoard board3"></div>
-                    <div class="lock">
-                        <div class="lockKeyHole1"></div>
-                        <div class="lockKeyHole2"></div>
+                <div class="treasure__bottom">
+                    <div class="treasure__bottomBoard"></div>
+                    <div class="treasure__bottomBoard"></div>
+                    <div class="treasure__bottomBoard"></div>
+                    <div class="treasure__lock">
+                        <div class="treasure__lockKeyHole1"></div>
+                        <div class="treasure__lockKeyHole2"></div>
                     </div>
                 </div>
             </div>
@@ -435,12 +446,12 @@ $(document).ready(function(){
 
     // (Page 19, #treasureFadeIn): Page the User lands on after clicking "Next" in (Page 18, #treasureIntro)
     $('#mainContent').on('click', '#goToTreasureFadeIn', function(){
-        $('#JQ__wonderUhOhMouth').hide();
-        $('#JQ__defaultMouth').show(); 
+        defaultJQ(); 
         $('#treasureIntro').replaceWith(`
             <section id="treasureFadeIn">
                 <p>Type and submit <span class="standOut">$("#treasure").fadeIn();</span> to reveal the treasure!</p>
                 <form id="treasureFadeInForm">
+                    <label for="treasureFadeInInput" class="sr-only">Type your answer and press enter to submit</label>
                     <input type="text" id="treasureFadeInInput">
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
@@ -458,6 +469,7 @@ $(document).ready(function(){
             $('#validateMessage').text("Please input an answer!");
             $('input').addClass('validateHighlight');
         } else if (treasureFadeInAnswer === '$("#treasure").fadeIn();') {
+            happyJQ();
             $('input').val('');
             $('#adventureItems').fadeIn();
             $('#treasureFadeIn').replaceWith(`
@@ -466,9 +478,8 @@ $(document).ready(function(){
                     <p>CONGRATULATIONS!!!!! I'm so glad to have shared this journey with you!</p>
                 </section>
             `);
-            $('#JQ__defaultEyes').hide();
-            $('#JQ__happyEyes').show();
             $('body').addClass('changeColour');
+            $('h1, p').addClass('changeTextColour');
         } else {
             $('#validateMessage').text("Hmm...let's try again!");
             $('input').addClass('validateHighlight');

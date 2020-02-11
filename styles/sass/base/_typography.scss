@@ -4,17 +4,17 @@ html {
 
 h1 {
     color: $text;
-    text-align: center;
     font-family: 'Nunito', sans-serif;
     font-size: 3.8rem;
+    text-align: center;
     margin-top: 20px;
 }
 
 p {
     color: $text;
     font-family: 'Nunito', sans-serif;
-    font-weight: 700;
     font-size: 2.0rem;
+    font-weight: 700;
     line-height: 3.6rem;
 }
 
@@ -28,9 +28,24 @@ a {
 }
 
 .validateMessage {
-    text-align: left;
     font-size: 1.6rem;
     font-weight: 400;
-    margin-left: 45px;
-    margin-top: 5px;
+    text-align: left;
+    margin: 5px 0 0 45px;
+}
+
+@keyframes textColour {
+    20% { 
+        color: #555;
+    } 
+    60% {
+        color: #555;
+    }
+    70% {
+        color: $text;
+    }
+}
+
+.changeTextColour {
+    animation: textColour 5s infinite;
 }

@@ -9,35 +9,39 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1>jQuery with JQ!</h1>
-    <div id="JQ" class="JQ">
-        <div id="JQ__eyes">
-            <div id="JQ__defaultEyes">
-                <div class="JQ__eye leftEye">
-                    <div class="JQ__eyeShine leftEyeShine"></div>
+    <main>
+        <div class="wrapper">
+            <h1>jQuery with JQ!</h1>
+            <div id="JQ" class="JQ">
+                <div id="JQ__eyes">
+                    <div id="JQ__defaultEyes">
+                        <div class="JQ__eye JQ__leftEye">
+                            <div class="JQ__eyeShine JQ__leftEyeShine"></div>
+                        </div>
+                        <div class="JQ__eye JQ__rightEye">
+                            <div class="JQ__eyeShine JQ__rightEyeShine"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="JQ__eye rightEye">
-                    <div class="JQ__eyeShine rightEyeShine"></div>
+                <div class="JQ__cheek JQ__leftCheek"></div>
+                <div class="JQ__cheek JQ__rightCheek"></div>
+                <div id="JQ__mouth">
+                    <div id="JQ__defaultMouth" class="JQ__defaultMouth"></div>
                 </div>
             </div>
+            <div id="adventureItems" class="adventureItems"></div>
+            <div class="textBox" id="textBox">
+                <section id="mainContent">
+                    <section id="intro">
+                        <p>Hi, I'm a blob named JQ!</p> 
+                        <p>Let's go on an adventure and learn more about jQuery together!</p>
+                        <button id="goToDemoIntro">Let's Go!</button>
+                    </section>
+                </section>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="scripts/scripts.js"></script> 
         </div>
-        <div class="JQ__cheek leftCheek"></div>
-        <div class="JQ__cheek rightCheek"></div>
-        <div id="JQ__mouth">
-            <div id="JQ__defaultMouth" class="JQ__defaultMouth"></div>
-        </div>
-    </div>
-    <div id="adventureItems" class="adventureItems"></div>
-    <div class="textBox" id="textBox">
-        <section id="mainContent">
-            <section id="intro">
-                <p>Hi, I'm a blob named JQ!</p> 
-                <p>Let's go on an adventure and learn more about jQuery together!</p>
-                <button id="goToDemoIntro">Let's Go!</button id="go">
-            </section>
-        </section>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="scripts/scripts.js"></script> 
+    </main>
 </body>
 </html>

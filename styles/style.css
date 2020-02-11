@@ -268,17 +268,17 @@ html {
 
 h1 {
   color: #F9BF98;
-  text-align: center;
   font-family: 'Nunito', sans-serif;
   font-size: 3.8rem;
+  text-align: center;
   margin-top: 20px;
 }
 
 p {
   color: #F9BF98;
   font-family: 'Nunito', sans-serif;
-  font-weight: 700;
   font-size: 2.0rem;
+  font-weight: 700;
   line-height: 3.6rem;
 }
 
@@ -292,16 +292,39 @@ a {
 }
 
 .validateMessage {
-  text-align: left;
   font-size: 1.6rem;
   font-weight: 400;
-  margin-left: 45px;
-  margin-top: 5px;
+  text-align: left;
+  margin: 5px 0 0 45px;
 }
 
-img {
-  display: block;
-  max-width: 100%;
+@-webkit-keyframes textColour {
+  20% {
+    color: #555;
+  }
+  60% {
+    color: #555;
+  }
+  70% {
+    color: #F9BF98;
+  }
+}
+
+@keyframes textColour {
+  20% {
+    color: #555;
+  }
+  60% {
+    color: #555;
+  }
+  70% {
+    color: #F9BF98;
+  }
+}
+
+.changeTextColour {
+  -webkit-animation: textColour 5s infinite;
+          animation: textColour 5s infinite;
 }
 
 body {
@@ -358,10 +381,10 @@ body {
 }
 
 .JQ {
+  background-color: bisque;
+  border-radius: 50% 50% 75px 75px;
   width: 175px;
   height: 130px;
-  border-radius: 50% 50% 75px 75px;
-  background-color: bisque;
   margin: 50px auto 75px auto;
   position: relative;
   -webkit-animation: bounce 3s ease infinite;
@@ -369,97 +392,97 @@ body {
 }
 
 .JQ__eye {
+  background-color: #272727;
+  border-radius: 50%;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  background-color: #272727;
   position: absolute;
 }
 
 .JQ__eyeShine {
+  background-color: white;
+  border-radius: 50%;
   width: 8px;
   height: 8px;
-  border-radius: 50%;
-  background-color: white;
   position: absolute;
+}
+
+.JQ__leftEye {
+  top: 45px;
+  left: 45px;
+}
+
+.JQ__rightEye {
+  top: 45px;
+  right: 45px;
+}
+
+.JQ__leftEyeShine {
+  top: 3px;
+  left: 2px;
+}
+
+.JQ__rightEyeShine {
+  top: 3px;
+  left: 2px;
+}
+
+.JQ__happyEyes {
+  color: #272727;
+  position: relative;
+}
+
+.JQ__happyLeftEye {
+  font-size: 3.6rem;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.JQ__happyRightEye {
+  font-size: 3.6rem;
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .JQ__cheek {
+  background-color: pink;
+  border-radius: 50%;
   width: 20px;
   height: 10px;
-  border-radius: 50%;
-  background-color: pink;
   position: absolute;
 }
 
+.JQ__leftCheek {
+  top: 70px;
+  left: 40px;
+}
+
+.JQ__rightCheek {
+  top: 70px;
+  right: 40px;
+}
+
 .JQ__defaultMouth {
+  background-color: #FA8072;
+  border-radius: 0 0 50% 50%;
   width: 20px;
   height: 10px;
-  border-radius: 0 0 50% 50%;
-  background-color: #FA8072;
   position: absolute;
   top: 70px;
   left: 75px;
 }
 
-.leftEye {
-  top: 45px;
-  left: 45px;
-}
-
-.rightEye {
-  top: 45px;
-  right: 45px;
-}
-
-.leftEyeShine {
-  top: 3px;
-  left: 2px;
-}
-
-.rightEyeShine {
-  top: 3px;
-  left: 2px;
-}
-
-.leftCheek {
-  top: 70px;
-  left: 40px;
-}
-
-.rightCheek {
-  top: 70px;
-  right: 40px;
-}
-
-.JQ__happyEyes {
-  position: relative;
-  color: #272727;
-}
-
-.JQ__happyLeftEye,
-.JQ__happyRightEye {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  font-size: 3.6rem;
-  position: absolute;
-}
-
-.JQ__happyLeftEye {
-  top: 30px;
-  left: 50px;
-}
-
-.JQ__happyRightEye {
-  top: 30px;
-  left: 110px;
-}
-
-.JQ__wonderUhOhMouth {
+.JQ__shockedMouth {
+  background-color: #FA8072;
+  border-radius: 100%;
   width: 20px;
   height: 10px;
-  border-radius: 100%;
-  background-color: #FA8072;
   position: absolute;
   top: 70px;
   left: 75px;
@@ -467,31 +490,35 @@ body {
 
 @-webkit-keyframes bounce {
   50% {
-    -webkit-transform: translate(0, 20px);
-            transform: translate(0, 20px);
     border-radius: 50% 50% 45px 45px;
     -webkit-box-shadow: 0 6px 2px -2px #272727;
             box-shadow: 0 6px 2px -2px #272727;
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
   }
 }
 
 @keyframes bounce {
   50% {
-    -webkit-transform: translate(0, 20px);
-            transform: translate(0, 20px);
     border-radius: 50% 50% 45px 45px;
     -webkit-box-shadow: 0 6px 2px -2px #272727;
             box-shadow: 0 6px 2px -2px #272727;
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
   }
 }
 
 .textBox {
   border: 10px dotted #DA9F93;
+  text-align: center;
   width: 50%;
   min-width: 245px;
   margin: 0 auto;
-  text-align: center;
   padding: 50px 50px 55px 50px;
+}
+
+.textBox__extraMargin {
+  margin-top: 50px;
 }
 
 @media (max-width: 695px) {
@@ -500,8 +527,9 @@ body {
   }
 }
 
-.textBoxExtraMargin {
-  margin-top: 50px;
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .sr-only {
@@ -515,15 +543,15 @@ body {
 
 button {
   background-color: #DA9F93;
-  color: #463F3A;
-  padding: 20px 30px;
-  font-size: 2.0rem;
-  font-weight: 700;
-  margin-top: 25px;
   border-radius: 10px;
   -webkit-box-shadow: 10px 10px 0 0 #463F3A;
           box-shadow: 10px 10px 0 0 #463F3A;
   cursor: pointer;
+  color: #463F3A;
+  font-size: 2.0rem;
+  font-weight: 700;
+  margin-top: 25px;
+  padding: 20px 30px;
 }
 
 button:hover {
@@ -538,22 +566,26 @@ button:active {
           transform: translateY(3px);
 }
 
-.initiallyHidden {
-  display: none;
+button:focus {
+  outline: 1px dotted cornsilk;
 }
 
 input {
+  border-radius: 10px;
   border: none;
+  font-size: 2.0rem;
   margin-top: 25px;
   padding: 20px 30px;
-  border-radius: 10px;
   width: 90%;
-  font-size: 2.0rem;
 }
 
 .validateHighlight {
   -webkit-box-shadow: 0px 0px 10px cornsilk;
           box-shadow: 0px 0px 10px cornsilk;
+}
+
+input:focus {
+  outline: 1px dotted cornsilk;
 }
 
 .adventureItems {
@@ -570,15 +602,15 @@ input {
           align-items: flex-end;
 }
 
-.adventureMarginMouse {
+.adventureMargin__mouse {
   margin-bottom: 77px;
 }
 
-.adventureMarginBrickWall {
+.adventureMargin__brickWall {
   margin-bottom: 41px;
 }
 
-.adventureMarginEvilRobot {
+.adventureMargin__evilRobot {
   margin-bottom: 77px;
 }
 
@@ -589,78 +621,78 @@ input {
 }
 
 .cookie {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
   background-color: #C5973C;
-  position: relative;
+  border-radius: 100%;
   -webkit-box-shadow: 5px 5px 0px #BD8820;
           box-shadow: 5px 5px 0px #BD8820;
-}
-
-.chip {
-  width: 15px;
-  height: 15px;
-  border-radius: 100%;
-  background-color: #47330C;
+  width: 100px;
+  height: 100px;
   position: relative;
 }
 
-.chip1 {
+.cookie__chip {
+  background-color: #47330C;
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  position: relative;
+}
+
+.cookie__chip1 {
   top: 10px;
   left: 50px;
 }
 
-.chip2 {
+.cookie__chip2 {
   top: 50px;
   left: 10px;
 }
 
-.chip3 {
+.cookie__chip3 {
   top: 10px;
   left: 40px;
 }
 
-.chip4 {
+.cookie__chip4 {
   top: 15px;
   left: 70px;
 }
 
-.chip5 {
+.cookie__chip5 {
   top: -30px;
   left: 5px;
 }
 
-.chip6 {
+.cookie__chip6 {
   left: 50px;
 }
 
-.chip7 {
+.cookie__chip7 {
   top: 10px;
   left: 50px;
 }
 
-.chip8 {
+.cookie__chip8 {
   top: 50px;
   left: 10px;
 }
 
-.chip9 {
+.cookie__chip9 {
   top: 10px;
   left: 60px;
 }
 
-.chip10 {
+.cookie__chip10 {
   top: 25px;
   left: 50px;
 }
 
-.chip11 {
+.cookie__chip11 {
   top: -30px;
   left: 5px;
 }
 
-.chip12 {
+.cookie__chip12 {
   top: -55px;
   left: 70px;
 }
@@ -670,55 +702,55 @@ input {
   left: 50px;
 }
 
-.mouseBody {
-  width: 115px;
-  height: 50px;
+.mouse__body {
   background-color: grey;
   border-radius: 70px 150% 100% 30px;
+  width: 115px;
+  height: 50px;
 }
 
-.mouseEye {
+.mouse__eye {
+  background-color: black;
+  border-radius: 100%;
   width: 10px;
   height: 10px;
-  border-radius: 100%;
-  background-color: black;
   position: absolute;
   top: 15px;
   left: 95px;
   z-index: 1;
 }
 
-.mouseEar {
-  width: 30px;
-  height: 30px;
+.mouse__ear {
   background-color: grey;
   border-radius: 100%;
+  width: 30px;
+  height: 30px;
   position: relative;
   bottom: 70px;
   left: 60px;
 }
 
-.mouseEarInner {
-  width: 15px;
-  height: 15px;
+.mouse__earInner {
   background-color: pink;
   border-radius: 50px 50px 0px 0px;
+  width: 15px;
+  height: 15px;
   position: absolute;
   bottom: 82px;
   left: 65px;
 }
 
-.mouseNose {
+.mouse__nose {
+  background-color: pink;
+  border-radius: 100%;
   width: 5px;
   height: 5px;
-  border-radius: 100%;
-  background-color: pink;
   position: absolute;
   left: 110px;
   bottom: 55px;
 }
 
-.mouseTail1 {
+.mouse__tail {
   background-color: pink;
   border-radius: 100%;
   width: 75px;
@@ -730,30 +762,30 @@ input {
 }
 
 .brickWall {
-  width: 300px;
   -webkit-box-shadow: 5px 5px 0 #a04f2a;
           box-shadow: 5px 5px 0 #a04f2a;
+  width: 300px;
 }
 
-.brick {
-  background-color: #a04f2a;
-  height: 50px;
-  border: 2px solid lightgrey;
-  border-radius: 2px;
-}
-
-.edgeBrick {
-  width: calc(100% / 3);
-}
-
-.midRowBrick {
-  width: calc(100% / 4);
-}
-
-.row {
+.brickWall__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.brickWall__brick {
+  background-color: #a04f2a;
+  border-radius: 2px;
+  border: 2px solid lightgrey;
+  height: 50px;
+}
+
+.brickWall__edgeBrick {
+  width: calc(100% / 3);
+}
+
+.brickWall__midRowBrick {
+  width: calc(100% / 4);
 }
 
 @-webkit-keyframes blink {
@@ -776,26 +808,26 @@ input {
 
 .evilRobot {
   position: absolute;
-  left: 250px;
   top: 10px;
+  left: 250px;
 }
 
 .evilRobot__head {
-  width: 180px;
-  height: 0;
   border-top: 150px solid green;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
+  width: 180px;
+  height: 0;
   position: relative;
   left: 10px;
 }
 
 .evilRobot__eye {
+  background-image: radial-gradient(circle, white 15%, transparent 40%);
+  border-radius: 100%;
   width: 100px;
   height: 100px;
   position: absolute;
-  background-image: radial-gradient(circle, white 15%, transparent 40%);
-  border-radius: 100%;
   -webkit-animation: blink 0.5s infinite;
           animation: blink 0.5s infinite;
 }
@@ -811,45 +843,45 @@ input {
 }
 
 .evilRobot__mouth {
+  background-color: silver;
+  border-radius: 100% 100% 0 0;
   width: 50px;
   height: 50px;
-  background-color: silver;
   position: relative;
   bottom: 60px;
   left: 15px;
-  border-radius: 100% 100% 0 0;
 }
 
 .evilRobot__torso {
+  background-color: green;
   width: 200px;
   height: 300px;
-  background-color: green;
 }
 
 .evilRobot__leftArm {
+  background-color: green;
   font-family: sans-serif;
   font-weight: bold;
   width: 150px;
   height: 50px;
-  background-color: green;
-  -webkit-transform: rotate(200deg);
-          transform: rotate(200deg);
   position: relative;
   top: -55px;
   left: -135px;
+  -webkit-transform: rotate(200deg);
+          transform: rotate(200deg);
 }
 
 .evilRobot__rightArm {
+  background-color: green;
   font-family: sans-serif;
   font-weight: bold;
   width: 150px;
   height: 50px;
-  background-color: green;
-  -webkit-transform: rotate(-200deg);
-          transform: rotate(-200deg);
   position: relative;
   top: -105px;
   left: 185px;
+  -webkit-transform: rotate(-200deg);
+          transform: rotate(-200deg);
 }
 
 .evilRobot__belt {
@@ -861,11 +893,11 @@ input {
 }
 
 .evilRobot__wheel {
-  height: 40px;
-  width: 40px;
-  background: lightgrey;
+  background-color: lightgrey;
   border-radius: 40px;
   border: 15px solid darkgrey;
+  width: 40px;
+  height: 40px;
   position: absolute;
   z-index: -1;
 }
@@ -885,103 +917,99 @@ input {
   top: 150px;
 }
 
-.lid {
-  width: 300px;
-  height: 150px;
+.treasure__lid {
   background-color: #654321;
   border-radius: 16px;
   border: 16px solid saddlebrown;
+  width: 300px;
+  height: 150px;
   position: relative;
   left: 165px;
 }
 
-.gold {
+.treasure__gold {
+  background-color: yellow;
+  border-radius: 100%;
   width: 50px;
   height: 50px;
-  border-radius: 100%;
-  background-color: yellow;
   position: absolute;
   z-index: 1;
 }
 
-.gold1 {
-  left: -10px;
+.treasure__gold1 {
   top: 105px;
+  left: -10px;
 }
 
-.gold2 {
-  left: 40px;
+.treasure__gold2 {
   top: 110px;
+  left: 40px;
 }
 
-.gold3 {
-  left: 110px;
+.treasure__gold3 {
   top: 115px;
+  left: 110px;
 }
 
-.gold4 {
-  left: 190px;
+.treasure__gold4 {
   top: 119px;
+  left: 190px;
 }
 
-.gold5 {
-  left: 240px;
+.treasure__gold5 {
   top: 108px;
+  left: 240px;
 }
 
-.bottom {
-  width: 400px;
-  height: 200px;
+.treasure__bottom {
   background-color: saddlebrown;
   border-radius: 16px;
-  position: relative;
-  left: 115px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 400px;
+  height: 200px;
+  position: relative;
+  left: 115px;
   z-index: 2;
 }
 
-.bottomBoard {
+.treasure__bottomBoard {
   border-bottom: 10px solid #654321;
   height: 50px;
 }
 
-.lock {
+.treasure__lock {
+  background-color: gold;
+  border-radius: 16px;
   width: 70px;
   height: 90px;
-  border-radius: 16px;
-  background-color: gold;
   position: absolute;
   left: 165px;
 }
 
-.lockKeyHole1 {
+.treasure__lockKeyHole1 {
+  background-color: #d07707;
+  border-radius: 100%;
   width: 30px;
   height: 30px;
-  border-radius: 100%;
-  background-color: #d07707;
   position: relative;
   top: 10px;
   left: 20px;
 }
 
-.lockKeyHole2 {
+.treasure__lockKeyHole2 {
+  background-color: #d07707;
+  border-radius: 50px 50px;
   width: 15px;
   height: 25px;
-  border-radius: 50px 50px;
-  background-color: #d07707;
   position: relative;
   top: 5px;
   left: 27px;
-}
-
-.pinkHeart {
-  color: #DA9F93;
 }

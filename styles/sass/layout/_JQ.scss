@@ -1,109 +1,98 @@
 .JQ {
+    background-color: $JQ;
+    border-radius: 50% 50% 75px 75px;
     width: 175px;
     height: 130px;
-    border-radius: 50% 50% 75px 75px;
-    background-color: $JQ;
     margin: 50px auto 75px auto;
     position: relative;
     animation: bounce 3s ease infinite;
     &__eye {
+        background-color: #272727;
+        border-radius: 50%;
         width: 20px;
         height: 20px;
-        border-radius: 50%;
-        background-color: #272727;
         position: absolute;
     }
     &__eyeShine {
+        background-color: white;
+        border-radius: 50%;
         width: 8px;
         height: 8px;
-        border-radius: 50%;
-        background-color: white;
         position: absolute;
     }
+    &__leftEye {
+        top: 45px;
+        left: 45px;
+    }
+    &__rightEye {
+        top: 45px;
+        right: 45px;
+    }
+    &__leftEyeShine {
+        top: 3px;
+        left: 2px;
+    }
+    &__rightEyeShine {
+        top: 3px;
+        left: 2px;
+    }
+    &__happyEyes {
+        color: #272727;
+        position: relative;
+    }
+    &__happyLeftEye {
+        font-size: 3.6rem;
+        position: absolute;
+        top: 30px;
+        left: 50px;
+        transform: rotate(90deg);
+    }
+    &__happyRightEye {
+        font-size: 3.6rem;
+        position: absolute;
+        top: 30px;
+        left: 110px;
+        transform: rotate(90deg);
+    } 
     &__cheek {
+        background-color: pink;
+        border-radius: 50%;
         width: 20px;
         height: 10px;
-        border-radius: 50%;
-        background-color: pink;
         position: absolute;
     } 
+    &__leftCheek {
+        top: 70px;
+        left: 40px;
+    }
+    &__rightCheek {
+        top: 70px;
+        right: 40px;
+    }
     &__defaultMouth {
+        background-color: #FA8072;
+        border-radius: 0 0 50% 50%;
         width: 20px;
         height: 10px;
-        border-radius: 0 0 50% 50%;
+        position: absolute;
+        top: 70px;
+        left: 75px;
+    }
+    &__shockedMouth {
         background-color: #FA8072;
+        border-radius: 100%;
+        width: 20px;
+        height: 10px;
         position: absolute;
         top: 70px;
         left: 75px;
     }
 }
 
-.leftEye {
-    top: 45px;
-    left: 45px;
-}
-
-.rightEye {
-    top: 45px;
-    right: 45px;
-}
-
-.leftEyeShine {
-    top: 3px;
-    left: 2px;
-}
-
-.rightEyeShine {
-    top: 3px;
-    left: 2px;
-}
-
-.leftCheek {
-    top: 70px;
-    left: 40px;
-}
-
-.rightCheek {
-    top: 70px;
-    right: 40px;
-}
-
-.JQ__happyEyes {
-    position: relative;
-    color: #272727;
-}
-
-.JQ__happyLeftEye, 
-.JQ__happyRightEye {
-    transform: rotate(90deg);
-    font-size: 3.6rem;
-    position: absolute;
-}
-
-.JQ__happyLeftEye {
-    top: 30px;
-    left: 50px;
-}
-
-.JQ__happyRightEye {
-    top: 30px;
-    left: 110px;
-}
-
-.JQ__wonderUhOhMouth {
-    width: 20px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: #FA8072;
-    position: absolute;
-    top: 70px;
-    left: 75px;
-}
-
 @keyframes bounce {
     50% {
-        transform: translate(0, 20px);
         border-radius: 50% 50% 45px 45px;
         box-shadow: 0 6px 2px -2px #272727;
+        transform: translate(0, 20px);
     }
 }

@@ -9,19 +9,15 @@
 @import 'base/setup';
 @import 'base/reset';
 @import 'base/typography';
-@import 'base/images';
 
 // layout
 @import 'layout/body';
 @import 'layout/JQ';
 @import 'layout/textBox';
+@import 'layout/wrapper';
 
 // components
 @import 'components/accessibility';
 @import 'components/buttons';
-@import 'components/hiding';
 @import 'components/inputField';
-@import 'components/adventureItems';
-
-// sections
-@import 'sections/demo';
+@import 'components/adventureItems'; 
