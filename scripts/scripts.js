@@ -172,7 +172,7 @@ $(document).ready(function(){
             $('input').addClass('validateHighlight');
         } else if (cookiesShowAnswer === '$("#cookies").show();') {
             happyJQ();
-            $('#adventureItems').append(`
+            $('#adventureItems').removeClass('hidden').append(`
                 <div id="cookieBin" class="cookieBin">
                     <div class="cookie cookie1">
                         <div class="cookie__chip cookie__chip1"></div>
@@ -234,7 +234,7 @@ $(document).ready(function(){
         $('#adventureItems').addClass('adventureMargin__mouse');
         $('#mouseIntro').replaceWith(`
             <section id="mouseAnimate">
-                <p>No problem. Type and submit <span class="standOut">$("#mouse").animate({"left": "+=150px"}, "fast").fadeOut();</span> to send the mouse on its merry way.</p>
+                <p>No problem. Type and submit <span class="standOut miniMouse">$("#mouse").animate({"left": "+=150px"}, "fast").fadeOut();</span> to send the mouse on its merry way.</p>
                 <form id="mouseAnimateForm">
                     <label for="mouseAnimateInput" class="sr-only">Type your answer and press enter to submit</label>
                     <input type="text" id="mouseAnimateInput">

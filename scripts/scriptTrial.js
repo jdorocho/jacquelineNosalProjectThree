@@ -36,7 +36,8 @@ const JQpages = [
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
             </section>
-        `
+        `,
+        correctAnswer: `$("#JQ").hide();`
     },
     // 3
     {
@@ -63,7 +64,8 @@ const JQpages = [
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
             </section>
-        `
+        `,
+        correctAnswer: `$("#JQ").show();`
     },
     // 5
     {
@@ -102,7 +104,8 @@ const JQpages = [
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
             </section>
-        `
+        `,
+        correctAnswer: `$("#cookies").show();`
     },
     // 8
     {
@@ -169,7 +172,8 @@ const JQpages = [
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
             </section>
-        `
+        `,
+        correctAnswer: `$("#mouse").animate({"left": "+=150px"}, "fast").fadeOut();`
     },
     // 11
     {
@@ -226,7 +230,8 @@ const JQpages = [
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
             </section>
-        `
+        `,
+        correctAnswer: `$("#brickWall").slideUp();`
     },
     // 14
     {
@@ -280,7 +285,8 @@ const JQpages = [
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
             </section>
-        `
+        `, 
+        correctAnswer: `$("#evilRobot").fadeOut();`
     },
     // 17
     {
@@ -337,7 +343,8 @@ const JQpages = [
                 </form>
                 <p id="validateMessage" class="validateMessage"></p>
             </section>
-        `
+        `,
+        correctAnswer: `$("#treasure").fadeIn();`
     },
     // 20
     {
@@ -393,13 +400,14 @@ $('#JQ__mouth').append(`
 `);
 defaultJQ();
 
-JQpages.forEach(function(page) {
-    JQpages.JQFace;
+for (let page of JQpages) {
     if ('button') {
+        JQpages[page].JQFace;
         $('#mainContent').on('click', 'button', function(){
             page++;
         });
-    } else if (JQpages.inputType === 'text') {
+    } else if ('input') {
+        JQpages[page].JQFace;
         $('#mainContent').on('submit', function(e){
             e.preventDefault();
             let userAnswer = $('input').val();
@@ -407,18 +415,55 @@ JQpages.forEach(function(page) {
             if (userAnswer === '') {
                 $('#validateMessage').text("Please input an answer!");
                 $('input').addClass('validateHighlight');
-            } else if (userAnswer === JQpages.correctAnswer) {
+            } else if (userAnswer === JQpages[page].correctAnswer) {
                 $('input').val('');
-                // adventure item action 
-                // update content
-                happyJQ();
+                page++;
             } else {
                 $('#validateMessage').text("Hmm...let's try again!");
                 $('input').addClass('validateHighlight');
             }
         });
     }
-});
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if (page === 3) {
     $('#textBox').addClass('textBox__extraMargin');

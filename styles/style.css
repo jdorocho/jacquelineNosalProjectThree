@@ -280,6 +280,15 @@ p {
   font-size: 2.0rem;
   font-weight: 700;
   line-height: 3.6rem;
+  min-width: 175px;
+  max-width: 100%;
+}
+
+@media (max-width: 739px) {
+  p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
 }
 
 a {
@@ -296,6 +305,12 @@ a {
   font-weight: 400;
   text-align: left;
   margin: 5px 0 0 45px;
+}
+
+@media (max-width: 739px) {
+  .miniMouse {
+    font-size: 1.4rem;
+  }
 }
 
 @-webkit-keyframes textColour {
@@ -521,6 +536,12 @@ body {
   margin-top: 50px;
 }
 
+@media (max-width: 739px) {
+  .textBox {
+    padding: 25px 25px 30px 25px;
+  }
+}
+
 @media (max-width: 695px) {
   .textBox {
     margin-bottom: 50px;
@@ -530,6 +551,21 @@ body {
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
+}
+
+@media (max-width: 1395px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .sr-only {
@@ -579,6 +615,12 @@ input {
   width: 90%;
 }
 
+@media (max-width: 739px) {
+  input {
+    font-size: 1.6rem;
+  }
+}
+
 .validateHighlight {
   -webkit-box-shadow: 0px 0px 10px cornsilk;
           box-shadow: 0px 0px 10px cornsilk;
@@ -589,10 +631,8 @@ input:focus {
 }
 
 .adventureItems {
-  width: 250px;
-  height: 250px;
   position: absolute;
-  right: 350px;
+  right: 400px;
   bottom: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -600,6 +640,14 @@ input:focus {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+}
+
+@media (max-width: 1395px) {
+  .adventureItems {
+    position: relative;
+    top: -25px;
+    left: 0;
+  }
 }
 
 .adventureMargin__mouse {
@@ -612,6 +660,18 @@ input:focus {
 
 .adventureMargin__evilRobot {
   margin-bottom: 77px;
+}
+
+@media (max-width: 1395px) {
+  .adventureMargin__mouse {
+    margin-bottom: 0;
+  }
+  .adventureMargin__brickWall {
+    margin-bottom: 0;
+  }
+  .adventureMargin__evilRobot {
+    margin-bottom: 0;
+  }
 }
 
 .cookieBin {
@@ -699,7 +759,6 @@ input:focus {
 
 .mouse {
   position: relative;
-  left: 50px;
 }
 
 .mouse__body {
@@ -765,6 +824,8 @@ input:focus {
   -webkit-box-shadow: 5px 5px 0 #a04f2a;
           box-shadow: 5px 5px 0 #a04f2a;
   width: 300px;
+  position: relative;
+  left: 100px;
 }
 
 .brickWall__row {
@@ -788,6 +849,12 @@ input:focus {
   width: calc(100% / 4);
 }
 
+@media (max-width: 1395px) {
+  .brickWall {
+    left: 0;
+  }
+}
+
 @-webkit-keyframes blink {
   50% {
     background-image: radial-gradient(circle, red 15%, transparent 40%);
@@ -807,9 +874,9 @@ input:focus {
 }
 
 .evilRobot {
-  position: absolute;
-  top: 10px;
-  left: 250px;
+  position: relative;
+  top: 200px;
+  left: 215px;
 }
 
 .evilRobot__head {
@@ -912,9 +979,42 @@ input:focus {
   left: 15px;
 }
 
+@media (max-width: 1395px) {
+  .evilRobot {
+    margin-bottom: 50px;
+    top: 0;
+    left: 0;
+  }
+  .evilRobot__torso {
+    position: relative;
+    width: 150px;
+    height: 250px;
+    left: 20px;
+  }
+  .evilRobot__leftArm {
+    width: 75px;
+    top: -45px;
+    left: -65px;
+  }
+  .evilRobot__rightArm {
+    width: 75px;
+    top: -90px;
+    left: 140px;
+  }
+  .evilRobot__wheel {
+    border: 10px solid darkgrey;
+    width: 30px;
+    height: 30px;
+  }
+  .evilRobot__belt {
+    width: 150px;
+  }
+}
+
 .treasure {
   position: relative;
   top: 150px;
+  left: 200px;
 }
 
 .treasure__lid {
@@ -924,7 +1024,7 @@ input:focus {
   width: 300px;
   height: 150px;
   position: relative;
-  left: 165px;
+  left: 50px;
 }
 
 .treasure__gold {
@@ -976,7 +1076,6 @@ input:focus {
   width: 400px;
   height: 200px;
   position: relative;
-  left: 115px;
   z-index: 2;
 }
 
@@ -1012,4 +1111,37 @@ input:focus {
   position: relative;
   top: 5px;
   left: 27px;
+}
+
+@media (max-width: 1395px) {
+  .treasure {
+    top: 0;
+    left: 0;
+  }
+  .treasure__lid {
+    width: 250px;
+    left: 25px;
+  }
+  .treasure__gold1 {
+    left: 10px;
+  }
+  .treasure__gold2 {
+    left: 20px;
+  }
+  .treasure__gold3 {
+    left: 90px;
+  }
+  .treasure__gold4 {
+    left: 150px;
+  }
+  .treasure__gold5 {
+    left: 170px;
+  }
+  .treasure__bottom {
+    width: 300px;
+  }
+}
+
+.hidden {
+  display: none;
 }

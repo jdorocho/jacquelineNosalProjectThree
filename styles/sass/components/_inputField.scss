@@ -5,6 +5,9 @@ input {
     margin-top: 25px;
     padding: 20px 30px;
     width: 90%;
+    @media (max-width: 739px) {
+        font-size: 1.6rem;
+    }
 }
 
 .validateHighlight {
