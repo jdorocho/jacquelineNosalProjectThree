@@ -1,3 +1,43 @@
+// Facial Expressions of JQ: Default
+const defaultJQ = function() {
+    $('#JQ__happyEyes').hide();
+    $('#JQ__shockedMouth').hide();
+    $('#JQ__defaultEyes').show();
+    $('#JQ__defaultMouth').show();
+}
+
+// Facial Expressions of JQ: Happy
+const happyJQ = function() {
+    $('#JQ__defaultEyes').hide();
+    $('#JQ__happyEyes').show();
+    $('#JQ__shockedMouth').hide();
+    $('#JQ__defaultMouth').show();
+}
+
+// Facial Expressions of JQ: Shocked 
+const shockedJQ = function() {
+    $('#JQ__happyEyes').hide();
+    $('#JQ__defaultMouth').hide();
+    $('#JQ__defaultEyes').show();
+    $('#JQ__shockedMouth').show();
+}
+
+// (Page 0, #intro): On page load 
+$('#JQ__eyes').append(`
+<div id="JQ__happyEyes">
+    <div class="JQ__happyLeftEye">
+    (
+    </div>
+    <div class="JQ__happyRightEye">
+    (
+    </div>
+</div>
+`);
+$('#JQ__mouth').append(`
+<div id="JQ__shockedMouth" class="JQ__shockedMouth"></div>
+`);
+defaultJQ();
+
 const JQpages = [
     //  0
     {
@@ -360,54 +400,14 @@ const JQpages = [
     }
 ];
 
-// Facial Expressions of JQ: Default
-const defaultJQ = function() {
-    $('#JQ__happyEyes').hide();
-    $('#JQ__shockedMouth').hide();
-    $('#JQ__defaultEyes').show();
-    $('#JQ__defaultMouth').show();
-}
-
-// Facial Expressions of JQ: Happy
-const happyJQ = function() {
-    $('#JQ__defaultEyes').hide();
-    $('#JQ__happyEyes').show();
-    $('#JQ__shockedMouth').hide();
-    $('#JQ__defaultMouth').show();
-}
-
-// Facial Expressions of JQ: Shocked 
-const shockedJQ = function() {
-    $('#JQ__happyEyes').hide();
-    $('#JQ__defaultMouth').hide();
-    $('#JQ__defaultEyes').show();
-    $('#JQ__shockedMouth').show();
-}
-
-// (Page 0, #intro): On page load 
-$('#JQ__eyes').append(`
-<div id="JQ__happyEyes">
-    <div class="JQ__happyLeftEye">
-    (
-    </div>
-    <div class="JQ__happyRightEye">
-    (
-    </div>
-</div>
-`);
-$('#JQ__mouth').append(`
-<div id="JQ__shockedMouth" class="JQ__shockedMouth"></div>
-`);
-defaultJQ();
-
 for (let page of JQpages) {
-    if ('button') {
-        JQpages[page].JQFace;
+    if (page === 0 || page === 1 || page === 3 || page === 5 || page === 6 || page === 8 || page === 9 || page === 11 || page === 12 || page === 14 || page === 15 || page === 17 || page === 18) {
         $('#mainContent').on('click', 'button', function(){
             page++;
+            $('#JQ').JQpages.JQFace();
+            $('#mainContent').html(JQpages.content);
         });
-    } else if ('input') {
-        JQpages[page].JQFace;
+    } else if (page === 4 || page === 5 || page === 8 || page === 14 || page === 17) {
         $('#mainContent').on('submit', function(e){
             e.preventDefault();
             let userAnswer = $('input').val();
@@ -418,6 +418,8 @@ for (let page of JQpages) {
             } else if (userAnswer === JQpages[page].correctAnswer) {
                 $('input').val('');
                 page++;
+                $('#JQ').JQpages.JQFace();
+                $('#mainContent').html(JQpages.content);
             } else {
                 $('#validateMessage').text("Hmm...let's try again!");
                 $('input').addClass('validateHighlight');

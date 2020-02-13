@@ -39,8 +39,12 @@ $(document).ready(function(){
     `);
     defaultJQ();
 
+    //  Caching jQuery Selectors
+    let $mainContent = $('#mainContent');
+    let $adventureItems = $('#adventureItems');
+
     // (Page 1, #demoIntro): Page the User lands on after clicking "Let's Go!" in (Page 0, #intro)
-    $('#mainContent').on('click', '#goToDemoIntro', function(){
+    $mainContent.on('click', '#goToDemoIntro', function(){
         $('#intro').replaceWith(`
             <section id="demoIntro">
                 <p>We're going to be using some jQuery Effect Methods to help us on our journey.</p>
@@ -50,7 +54,7 @@ $(document).ready(function(){
     });
 
     // (Page 2, #demoHide): Page the User lands on after clicking "Next" in (Page 1, #demoIntro)
-    $('#mainContent').on('click', '#goToDemoHide', function(){
+    $mainContent.on('click', '#goToDemoHide', function(){
         $('#demoIntro').replaceWith(`
             <section id="demoHide">
                 <p>Let's try one right now!</p> 
@@ -66,7 +70,7 @@ $(document).ready(function(){
     });
 
     // (Page 3, #demoHideSuccess): Page the User lands on after successful submission in (Page 2, #demoHide)
-    $('#mainContent').on('submit', '#demoHideForm', function(e){
+    $mainContent.on('submit', '#demoHideForm', function(e){
         e.preventDefault();
 
         let demoHideAnswer = $('#demoHideInput').val();
@@ -92,7 +96,7 @@ $(document).ready(function(){
     });
 
     // (Page 4, #demoShow): Page the User lands on after clicking "Next" in (Page 3, #demoHideSuccess)
-    $('#mainContent').on('click', '#goToDemoShow', function(){
+    $mainContent.on('click', '#goToDemoShow', function(){
         $('#demoHideSuccess').replaceWith(`
             <section id="demoShow">
                 <p>Now you can bring me back using show().</p>
@@ -108,7 +112,7 @@ $(document).ready(function(){
     });
 
     // (Page 5, #demoShowSuccess): Page the User lands on after successful submission in (Page 4, #demoShow)
-    $('#mainContent').on('submit', '#demoShowForm', function(e){
+    $mainContent.on('submit', '#demoShowForm', function(e){
         e.preventDefault();
 
         let demoShowAnswer = $('#demoShowInput').val();
@@ -134,7 +138,7 @@ $(document).ready(function(){
     });
 
     // (Page 6, #cookiesIntro): Page the User lands on after clicking "Next" in (Page 5, #demoShowSuccess)
-    $('#mainContent').on('click', '#goToCookiesIntro', function(){
+    $mainContent.on('click', '#goToCookiesIntro', function(){
         shockedJQ();
         $('#demoShowSuccess').replaceWith(`
             <section id="cookiesIntro">
@@ -146,7 +150,7 @@ $(document).ready(function(){
     });
 
     // (Page 7, #cookiesShow): Page the User lands on after clicking "Next" in (Page 6, #cookiesIntro)
-    $('#mainContent').on('click', '#goToCookiesShow', function(){
+    $mainContent.on('click', '#goToCookiesShow', function(){
         defaultJQ();
         $('#cookiesIntro').replaceWith(`
             <section id="cookiesShow">
@@ -162,7 +166,7 @@ $(document).ready(function(){
     });
 
     // (Page 8, #cookiesSuccess): Page the User lands on after successful submission in (Page 7, #cookiesShow)
-    $('#mainContent').on('submit', '#cookiesShowForm', function(e){
+    $mainContent.on('submit', '#cookiesShowForm', function(e){
         e.preventDefault();
 
         let cookiesShowAnswer = $('#cookiesShowInput').val();
@@ -172,7 +176,7 @@ $(document).ready(function(){
             $('input').addClass('validateHighlight');
         } else if (cookiesShowAnswer === '$("#cookies").show();') {
             happyJQ();
-            $('#adventureItems').removeClass('hidden').append(`
+            $adventureItems.removeClass('hidden').append(`
                 <div id="cookieBin" class="cookieBin">
                     <div class="cookie cookie1">
                         <div class="cookie__chip cookie__chip1"></div>
@@ -207,10 +211,10 @@ $(document).ready(function(){
     });
 
     // (Page 9, #mouseIntro): Page the User lands on after clicking "Next" in (Page 8, #cookiesSuccess)
-    $('#mainContent').on('click', '#goToMouseIntro', function(){
+    $mainContent.on('click', '#goToMouseIntro', function(){
         shockedJQ();
         $('#cookieBin').hide();
-        $('#adventureItems').append(`
+        $adventureItems.append(`
             <div id="mouse" class="mouse">
                 <div class="mouse__body"></div>
                 <div class="mouse__eye"></div>
@@ -229,9 +233,9 @@ $(document).ready(function(){
     });
 
     // (Page 10, #mouseAnimate): Page the User lands on after clicking "Next" in (Page 9, #mouseIntro)
-    $('#mainContent').on('click', '#goToMouseAnimate', function(){
+    $mainContent.on('click', '#goToMouseAnimate', function(){
         defaultJQ();
-        $('#adventureItems').addClass('adventureMargin__mouse');
+        $adventureItems.addClass('adventureMargin__mouse');
         $('#mouseIntro').replaceWith(`
             <section id="mouseAnimate">
                 <p>No problem. Type and submit <span class="standOut miniMouse">$("#mouse").animate({"left": "+=150px"}, "fast").fadeOut();</span> to send the mouse on its merry way.</p>
@@ -245,7 +249,7 @@ $(document).ready(function(){
     });
 
     // (Page 11, #mouseSuccess): Page the User lands on after successful submission in (Page 10, #mouseAnimate)
-    $('#mainContent').on('submit', '#mouseAnimateForm', function(e){
+    $mainContent.on('submit', '#mouseAnimateForm', function(e){
         e.preventDefault();
 
         let mouseAnimateAnswer = $('#mouseAnimateInput').val();
@@ -257,7 +261,7 @@ $(document).ready(function(){
             happyJQ();
             $('#mouse').animate({"left": "+=150px"}, "fast").fadeOut();
             $('input').val('');
-            $('#adventureItems').removeClass('adventureMargin__mouse');
+            $adventureItems.removeClass('adventureMargin__mouse');
             $('#mouseAnimate').replaceWith(`
                 <section id="mouseSuccess">
                 <p>Yay!</p>
@@ -271,9 +275,9 @@ $(document).ready(function(){
     });
 
     // (Page 12, #brickWallIntro): Page the User lands on after clicking "Next" in (Page 11, #mouseSuccess)
-    $('#mainContent').on('click', '#goToBrickWallIntro', function(){
+    $mainContent.on('click', '#goToBrickWallIntro', function(){
         shockedJQ();
-        $('#adventureItems').append(`
+        $adventureItems.append(`
             <div id="brickWall" class="brickWall">
                 <div class="brickWall__row">
                     <div class="brickWall__brick brickWall__edgeBrick"></div>
@@ -302,9 +306,9 @@ $(document).ready(function(){
     });
 
     // (Page 13, #brickWallSlideUp): Page the User lands on after clicking "Next" in (Page 12, #brickWallIntro)
-    $('#mainContent').on('click', '#goToBrickWallSlideUp', function(){
+    $mainContent.on('click', '#goToBrickWallSlideUp', function(){
         defaultJQ();
-        $('#adventureItems').addClass('adventureMargin__brickWall');
+        $adventureItems.addClass('adventureMargin__brickWall');
         $('#brickWallIntro').replaceWith(`
             <section id="brickWallSlideUp">
                 <p>Type and submit <span class="standOut">$("#brickWall").slideUp();</span> to slide the wall out of the way.</p>
@@ -318,7 +322,7 @@ $(document).ready(function(){
     });
 
     // (Page 14, #brickWallSuccess): Page the User lands on after successful submission in (Page 13, #brickWallSlideUp)
-    $('#mainContent').on('submit', '#brickWallSlideUpForm', function(e){
+    $mainContent.on('submit', '#brickWallSlideUpForm', function(e){
         e.preventDefault();
 
         let brickWallSlideUpAnswer = $('#brickWallSlideUpInput').val();
@@ -330,7 +334,7 @@ $(document).ready(function(){
             happyJQ();
             $('#brickWall').slideUp();
             $('input').val('');
-            $('#adventureItems').removeClass('adventureMargin__brickWall');
+            $adventureItems.removeClass('adventureMargin__brickWall');
             $('#brickWallSlideUp').replaceWith(`
                 <section id="brickWallSuccess">
                     <p>Nice!! You did it!</p>
@@ -344,9 +348,9 @@ $(document).ready(function(){
     });
 
     // (Page 15, #evilRobotIntro): Page the User lands on after clicking "Next" in (Page 14, #brickWallSuccess)
-    $('#mainContent').on('click', '#goToEvilRobotIntro', function(){
+    $mainContent.on('click', '#goToEvilRobotIntro', function(){
         shockedJQ();
-        $('#adventureItems').append(`
+        $adventureItems.append(`
             <div id="evilRobot" class="evilRobot">
                 <div class="evilRobot__head">
                     <div class="evilRobot__eye evilRobot__leftEye"></div>
@@ -371,9 +375,9 @@ $(document).ready(function(){
     });
 
     // (Page 16, #evilRobotFadeOut): Page the User lands on after clicking "Next" in (Page 15, #evilRobotIntro)
-    $('#mainContent').on('click', '#goToEvilRobotFadeOut', function(){
+    $mainContent.on('click', '#goToEvilRobotFadeOut', function(){
         defaultJQ();
-        $('#adventureItems').addClass('adventureMargin__evilRobot');
+        $adventureItems.addClass('adventureMargin__evilRobot');
         $('#evilRobotIntro').replaceWith(`
             <section id="evilRobotFadeOut">
                 <p>No need to fear.</p>
@@ -388,7 +392,7 @@ $(document).ready(function(){
     }); 
 
     // (Page 17, #evilRobotSuccess): Page the User lands on after successful submission in (Page 16, #evilRobotFadeOut)
-    $('#mainContent').on('submit', '#evilRobotFadeOutForm', function(e){
+    $mainContent.on('submit', '#evilRobotFadeOutForm', function(e){
         e.preventDefault();
 
         let evilRobotFadeOutAnswer = $('#evilRobotFadeOutInput').val();
@@ -400,7 +404,7 @@ $(document).ready(function(){
             happyJQ();
             $('#evilRobot').fadeOut();
             $('input').val('');
-            $('#adventureItems').removeClass('adventureMargin__evilRobot');
+            $adventureItems.removeClass('adventureMargin__evilRobot');
             $('#evilRobotFadeOut').replaceWith(`
                 <section id="evilRobotSuccess">
                     <p>Whew! That was close!</p>
@@ -414,7 +418,7 @@ $(document).ready(function(){
     });
 
     // (Page 18, #treasureIntro): Page the User lands on after clicking "Next" in (Page 17, #evilRobotSuccess)
-    $('#mainContent').on('click', '#goToTreasureIntro', function(){
+    $mainContent.on('click', '#goToTreasureIntro', function(){
         shockedJQ();
         $('#evilRobotSuccess').replaceWith(`
             <section id="treasureIntro">
@@ -422,7 +426,7 @@ $(document).ready(function(){
                 <button id="goToTreasureFadeIn">Next ></button>
             </section>
         `);
-        $('#adventureItems').append(`
+        $adventureItems.append(`
             <div id="treasure" class="treasure">
                 <div class="treasure__lid">
                     <div class="treasure__gold treasure__gold1"></div>
@@ -445,7 +449,7 @@ $(document).ready(function(){
     });
 
     // (Page 19, #treasureFadeIn): Page the User lands on after clicking "Next" in (Page 18, #treasureIntro)
-    $('#mainContent').on('click', '#goToTreasureFadeIn', function(){
+    $mainContent.on('click', '#goToTreasureFadeIn', function(){
         defaultJQ(); 
         $('#treasureIntro').replaceWith(`
             <section id="treasureFadeIn">
@@ -460,7 +464,7 @@ $(document).ready(function(){
     });
 
     // (Page 20, #treasureSuccess): Page the User lands on after successful submission in (Page 19, #treasureFadeIn)
-    $('#mainContent').on('submit', '#treasureFadeInForm', function(e){
+    $mainContent.on('submit', '#treasureFadeInForm', function(e){
         e.preventDefault();
 
         let treasureFadeInAnswer = $('#treasureFadeInInput').val();
@@ -471,7 +475,7 @@ $(document).ready(function(){
         } else if (treasureFadeInAnswer === '$("#treasure").fadeIn();') {
             happyJQ();
             $('input').val('');
-            $('#adventureItems').fadeIn();
+            $adventureItems.fadeIn();
             $('#treasureFadeIn').replaceWith(`
                 <section id="treasureSuccess">
                     <p>You did it! Hurray!!!</p>
