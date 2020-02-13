@@ -178,7 +178,7 @@ $(document).ready(function(){
             happyJq();
             $adventureItems.removeClass('hidden').append(`
                 <div id="cookieBin" class="cookieBin">
-                    <div class="cookie cookie1">
+                    <div class="cookie cookie1" aria-label="a chocolate chip cookie">
                         <div class="cookie__chip cookie__chip1"></div>
                         <div class="cookie__chip cookie__chip2"></div>
                         <div class="cookie__chip cookie__chip3"></div>
@@ -187,7 +187,7 @@ $(document).ready(function(){
                         <div class="cookie__chip cookie__chip6"></div>
                     </div>
                 
-                    <div class="cookie cookie2">
+                    <div class="cookie cookie2" aria-label="a chocolate chip cookie">
                         <div class="cookie__chip cookie__chip7"></div>
                         <div class="cookie__chip cookie__chip8"></div>
                         <div class="cookie__chip cookie__chip9"></div>
@@ -215,7 +215,7 @@ $(document).ready(function(){
         shockedJq();
         $('#cookieBin').hide();
         $adventureItems.append(`
-            <div id="mouse" class="mouse">
+            <div id="mouse" class="mouse" aria-label="a grey mouse with pink tail and nose">
                 <div class="mouse__body"></div>
                 <div class="mouse__eye"></div>
                 <div class="mouse__ear"></div>
@@ -278,7 +278,7 @@ $(document).ready(function(){
     $mainContent.on('click', '#goToBrickWallIntro', function(){
         shockedJq();
         $adventureItems.append(`
-            <div id="brickWall" class="brickWall">
+            <div id="brickWall" class="brickWall" aria-label="a brick wall">
                 <div class="brickWall__row">
                     <div class="brickWall__brick brickWall__edgeBrick"></div>
                     <div class="brickWall__brick brickWall__edgeBrick"></div>
@@ -351,7 +351,7 @@ $(document).ready(function(){
     $mainContent.on('click', '#goToEvilRobotIntro', function(){
         shockedJq();
         $adventureItems.append(`
-            <div id="evilRobot" class="evilRobot">
+            <div id="evilRobot" class="evilRobot" aria-label="an angry green robot with flashing red laser eyes and a magenta belt">
                 <div class="evilRobot__head">
                     <div class="evilRobot__eye evilRobot__leftEye"></div>
                     <div class="evilRobot__eye evilRobot__rightEye"></div>
@@ -427,7 +427,7 @@ $(document).ready(function(){
             </section>
         `);
         $adventureItems.append(`
-            <div id="treasure" class="treasure">
+            <div id="treasure" class="treasure" aria-label="an open treasure chest with gold inside">
                 <div class="treasure__lid">
                     <div class="treasure__gold treasure__gold1"></div>
                     <div class="treasure__gold treasure__gold2"></div>
