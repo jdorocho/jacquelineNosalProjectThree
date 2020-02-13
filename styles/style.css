@@ -526,8 +526,8 @@ body {
 .textBox {
   border: 10px dotted #DA9F93;
   text-align: center;
-  width: 50%;
   min-width: 245px;
+  width: 50%;
   margin: 0 auto;
   padding: 50px 50px 55px 50px;
 }
@@ -610,9 +610,9 @@ input {
   border-radius: 10px;
   border: none;
   font-size: 2.0rem;
+  width: 90%;
   margin-top: 25px;
   padding: 20px 30px;
-  width: 90%;
 }
 
 @media (max-width: 739px) {
@@ -631,15 +631,15 @@ input:focus {
 }
 
 .adventureItems {
-  position: absolute;
-  right: 400px;
-  bottom: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: absolute;
+  right: 400px;
+  bottom: 300px;
 }
 
 @media (max-width: 1395px) {
@@ -881,8 +881,8 @@ input:focus {
 
 .evilRobot__head {
   border-top: 150px solid green;
-  border-left: 50px solid transparent;
   border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
   width: 180px;
   height: 0;
   position: relative;
@@ -986,9 +986,9 @@ input:focus {
     left: 0;
   }
   .evilRobot__torso {
-    position: relative;
     width: 150px;
     height: 250px;
+    position: relative;
     left: 20px;
   }
   .evilRobot__leftArm {
