@@ -2,6 +2,9 @@ $(document).ready(function(){
     //  Caching jQuery Selectors
     const $mainContent = $('#mainContent');
     const $adventureItems = $('#adventureItems');
+    const $textBox = $('#textBox');
+    const $inputTag = $('input');
+    const $jQBlob = $('#jQ');
 
     // Facial Expressions of JQ: Default
     const defaultJq = function() {
@@ -25,6 +28,17 @@ $(document).ready(function(){
         $('#jQ__defaultMouth').hide();
         $('#jQ__defaultEyes').show();
         $('#jQ__shockedMouth').show();
+    }
+
+    // Form Validation
+    const validateEmptyInput = function() {
+        $('#validateMessage').text("Please input an answer!");
+        $inputTag.addClass('validateHighlight');
+    }
+
+    const validateWrongInput = function() {
+        $('#validateMessage').text("Hmm...let's try again!");
+        $inputTag.addClass('validateHighlight');
     }
 
     // (Page 0, #intro): On page load 
@@ -76,12 +90,11 @@ $(document).ready(function(){
         const demoHideAnswer = $('#demoHideInput').val();
 
         if (demoHideAnswer === '') {
-            $('#validateMessage').text("Please input an answer!");
-            $('input').addClass('validateHighlight');
+            validateEmptyInput();
         } else if (demoHideAnswer === '$("#jQ").hide();') {
-            $('#jQ').hide();
-            $('#textBox').addClass('textBox__extraMargin');
-            $('input').val('');
+            $jQBlob.hide();
+            $textBox.addClass('textBox__extraMarginTop');
+            $inputTag.val('');
             $('#demoHide').replaceWith(`
                 <section id="demoHideSuccess">
                     <p>You did it! But...where did I go?</p>
@@ -90,8 +103,7 @@ $(document).ready(function(){
                 </section>
             `);
         } else {
-            $('#validateMessage').text("Hmm...let's try again!");
-            $('input').addClass('validateHighlight');
+            validateWrongInput();
         }
     });
 
@@ -118,13 +130,12 @@ $(document).ready(function(){
         const demoShowAnswer = $('#demoShowInput').val();
 
         if (demoShowAnswer === '') {
-            $('#validateMessage').text("Please input an answer!");
-            $('input').addClass('validateHighlight');
+            validateEmptyInput();
         } else if (demoShowAnswer === '$("#jQ").show();') {
-            $('#jQ').show();
+            $jQBlob.show();
             happyJq();
-            $('#textBox').removeClass('textBox__extraMargin');
-            $('input').val('');
+            $textBox.removeClass('textBox__extraMarginTop');
+            $inputTag.val('');
             $('#demoShow').replaceWith(`
                 <section id="demoShowSuccess">
                     <p>Way to go!</p>
@@ -132,8 +143,7 @@ $(document).ready(function(){
                 </section>
             `);
         } else {
-            $('#validateMessage').text("Hmm...let's try again!");
-            $('input').addClass('validateHighlight');
+            validateWrongInput();
         }
     });
 
@@ -172,8 +182,7 @@ $(document).ready(function(){
         const cookiesShowAnswer = $('#cookiesShowInput').val();
 
         if (cookiesShowAnswer === '') {
-            $('#validateMessage').text("Please input an answer!");
-            $('input').addClass('validateHighlight');
+            validateEmptyInput();
         } else if (cookiesShowAnswer === '$("#cookies").show();') {
             happyJq();
             $adventureItems.removeClass('hidden').append(`
@@ -197,7 +206,7 @@ $(document).ready(function(){
                     </div>
                 </div>
             `);
-            $('input').val('');
+            $inputTag.val('');
             $('#cookiesShow').replaceWith(`
                 <section id="cookiesSuccess">
                     <p>Yum! Delicious!</p>
@@ -205,8 +214,7 @@ $(document).ready(function(){
                 </section>
             `);
         } else {
-            $('#validateMessage').text("Hmm...let's try again!");
-            $('input').addClass('validateHighlight');
+            validateWrongInput();
         }
     });
 
@@ -246,6 +254,7 @@ $(document).ready(function(){
                 <p id="validateMessage" class="validateMessage"></p>
             </section>
         `);
+        $textBox.addClass('textBox__extraMarginBottom');
     });
 
     // (Page 11, #mouseSuccess): Page the User lands on after successful submission in (Page 10, #mouseAnimate)
@@ -255,12 +264,11 @@ $(document).ready(function(){
         const mouseAnimateAnswer = $('#mouseAnimateInput').val();
 
         if (mouseAnimateAnswer === '') {
-            $('#validateMessage').text("Please input an answer!");
-            $('input').addClass('validateHighlight');
+            validateEmptyInput();
         } else if (mouseAnimateAnswer === '$("#mouse").animate({"left": "+=150px"}, "fast").fadeOut();') {
             happyJq();
             $('#mouse').animate({"left": "+=150px"}, "fast").fadeOut();
-            $('input').val('');
+            $inputTag.val('');
             $adventureItems.removeClass('adventureMargin__mouse');
             $('#mouseAnimate').replaceWith(`
                 <section id="mouseSuccess">
@@ -269,8 +277,7 @@ $(document).ready(function(){
                 </section>
             `);
         } else {
-            $('#validateMessage').text("Hmm...let's try again!");
-            $('input').addClass('validateHighlight');
+            validateWrongInput();
         }
     });
 
@@ -328,12 +335,11 @@ $(document).ready(function(){
         const brickWallSlideUpAnswer = $('#brickWallSlideUpInput').val();
 
         if (brickWallSlideUpAnswer === '') {
-            $('#validateMessage').text("Please input an answer!");
-            $('input').addClass('validateHighlight');
+            validateEmptyInput();
         } else if (brickWallSlideUpAnswer === '$("#brickWall").slideUp();') {
             happyJq();
             $('#brickWall').slideUp();
-            $('input').val('');
+            $inputTag.val('');
             $adventureItems.removeClass('adventureMargin__brickWall');
             $('#brickWallSlideUp').replaceWith(`
                 <section id="brickWallSuccess">
@@ -342,8 +348,7 @@ $(document).ready(function(){
                 </section>
             `);
         } else {
-            $('#validateMessage').text("Hmm...let's try again!");
-            $('input').addClass('validateHighlight');
+            validateWrongInput();
         }
     });
 
@@ -398,12 +403,11 @@ $(document).ready(function(){
         const evilRobotFadeOutAnswer = $('#evilRobotFadeOutInput').val();
 
         if (evilRobotFadeOutAnswer === '') {
-            $('#validateMessage').text("Please input an answer!");
-            $('input').addClass('validateHighlight');
+            validateEmptyInput();
         } else if (evilRobotFadeOutAnswer === '$("#evilRobot").fadeOut();') {
             happyJq();
             $('#evilRobot').fadeOut();
-            $('input').val('');
+            $inputTag.val('');
             $adventureItems.removeClass('adventureMargin__evilRobot');
             $('#evilRobotFadeOut').replaceWith(`
                 <section id="evilRobotSuccess">
@@ -412,8 +416,7 @@ $(document).ready(function(){
                 </section>
             `);
         } else {
-            $('#validateMessage').text("Hmm...let's try again!");
-            $('input').addClass('validateHighlight');
+            validateWrongInput();
         }
     });
 
@@ -470,11 +473,10 @@ $(document).ready(function(){
         const treasureFadeInAnswer = $('#treasureFadeInInput').val();
 
         if (treasureFadeInAnswer === '') {
-            $('#validateMessage').text("Please input an answer!");
-            $('input').addClass('validateHighlight');
+            validateEmptyInput();
         } else if (treasureFadeInAnswer === '$("#treasure").fadeIn();') {
             happyJq();
-            $('input').val('');
+            $inputTag.val('');
             $adventureItems.fadeIn();
             $('#treasureFadeIn').replaceWith(`
                 <section id="treasureSuccess">
@@ -485,8 +487,7 @@ $(document).ready(function(){
             $('body').addClass('changeColour');
             $('h1, p').addClass('changeTextColour');
         } else {
-            $('#validateMessage').text("Hmm...let's try again!");
-            $('input').addClass('validateHighlight');
+            validateWrongInput();
         }
     });
 });

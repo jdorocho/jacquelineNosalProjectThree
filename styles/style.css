@@ -301,10 +301,16 @@ a {
 }
 
 .validateMessage {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
   text-align: left;
   margin: 5px 0 0 45px;
+}
+
+@media (max-width: 600px) {
+  .validateMessage {
+    margin: 5px 0 0 10px;
+  }
 }
 
 @media (max-width: 739px) {
@@ -532,8 +538,12 @@ body {
   padding: 50px 50px 55px 50px;
 }
 
-.textBox__extraMargin {
+.textBox__extraMarginTop {
   margin-top: 50px;
+}
+
+.textBox__extraMarginBottom {
+  margin-bottom: 50px;
 }
 
 @media (max-width: 739px) {
