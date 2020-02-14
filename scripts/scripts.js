@@ -33,12 +33,12 @@ $(document).ready(function(){
     // Form Validation
     const validateEmptyInput = function() {
         $('#validateMessage').text("Please input an answer!");
-        $inputTag.addClass('validateHighlight');
+        $('input').addClass('validateHighlight');
     }
 
     const validateWrongInput = function() {
         $('#validateMessage').text("Hmm...let's try again!");
-        $inputTag.addClass('validateHighlight');
+        $('input').addClass('validateHighlight');
     }
 
     // (Page 0, #intro): On page load 
