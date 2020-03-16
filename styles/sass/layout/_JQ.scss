@@ -20,18 +20,17 @@
         height: 8px;
         position: absolute;
     }
-    &__leftEye {
+    &__leftEye, 
+    &__rightEye {
         top: 45px;
+    }
+    &__leftEye {
         left: 45px;
     }
     &__rightEye {
-        top: 45px;
         right: 45px;
     }
-    &__leftEyeShine {
-        top: 3px;
-        left: 2px;
-    }
+    &__leftEyeShine, 
     &__rightEyeShine {
         top: 3px;
         left: 2px;

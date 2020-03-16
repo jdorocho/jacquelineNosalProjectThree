@@ -4,7 +4,7 @@
     position: absolute;
     right: 400px;
     bottom: 300px;
-    @media (max-width: 1395px) {
+    @media (max-width: 1395px){
         position: relative;
         top: -25px;
         left: 0;
@@ -22,7 +22,7 @@
     &__evilRobot {
         margin-bottom: 77px;
     }
-    @media (max-width: 1395px) {
+    @media (max-width: 1395px){
         &__mouse {
             margin-bottom: 0;
         }

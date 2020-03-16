@@ -428,22 +428,19 @@ body {
   position: absolute;
 }
 
-.jQ__leftEye {
+.jQ__leftEye, .jQ__rightEye {
   top: 45px;
+}
+
+.jQ__leftEye {
   left: 45px;
 }
 
 .jQ__rightEye {
-  top: 45px;
   right: 45px;
 }
 
-.jQ__leftEyeShine {
-  top: 3px;
-  left: 2px;
-}
-
-.jQ__rightEyeShine {
+.jQ__leftEyeShine, .jQ__rightEyeShine {
   top: 3px;
   left: 2px;
 }
@@ -598,6 +595,8 @@ button {
   font-weight: 700;
   margin-top: 25px;
   padding: 20px 30px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 button:hover {
